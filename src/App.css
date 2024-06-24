@@ -1,4 +1,12 @@
+.app {
+  display: flex;
+  flex-direction: column; 
+}
 
+.pages{
+  margin: 5%;
+  padding-top: 5;
+}
 /* #root {
   max-width: 1280px;
   margin: 0 auto;

@@ -1,7 +1,9 @@
 import './Nav.css'
+import Logo from '../../assets/logo';
 
 function Nav() {
-    
+
+
   return (
     <nav className="navbar">
 
@@ -20,7 +22,7 @@ function Nav() {
             <a href="#about">About</a>
           </li>
           <li>
-            <a href="#food">Project</a>
+            <a href="#projects">Project</a>
           </li>
           <li>
             <a href="#food-menu">CV</a>
@@ -29,8 +31,12 @@ function Nav() {
             <a href="#contact">Contact</a>
           </li>
         </ul>
-        <p className="logo">iDavid80</p>
+        
       </div>
+
+      <Logo/>
+
+     
     </nav>
   );
 };

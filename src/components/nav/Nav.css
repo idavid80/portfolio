@@ -10,24 +10,32 @@
   box-shadow: 0px 5px 10px 0px #aaa;
   position: fixed;
   width: 100%;
-  background: #fff;
+  background: #dbd4d1;
   color: #000;
   opacity: 0.85;
 /*   height: 50px; */
-height: max-content;
+  height: max-content;
   z-index: 12;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
 }
 
 .navbar-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: 64px;
   align-items: center;
+  background: #dbd4d1;
+  margin-right: 5%;
+  order: 2;
 }
 
 .menu-items {
-  order: 2;
   display: flex;
+  background: #dbd4d1;
 }
 
 .menu-items li {
@@ -49,9 +57,13 @@ height: max-content;
   transition: color 0.3s ease-in-out;
 }
 
-.logo {
-  order: 1;
+.idavid80 {
   font-size: 2.3rem;
+  margin-right: 5%;
+  background: #dbd4d1;
+  order: 1;
+  margin-left: 2%;
+
 /*   margin-bottom: 0.5rem; */
 }
 
@@ -73,6 +85,7 @@ height: max-content;
       display: block;
       position: relative;
       height: 64px;
+      order: 1;
     }
   
     .navbar-container input[type="checkbox"] {
@@ -123,9 +136,9 @@ height: max-content;
   
     .navbar .menu-items {
       padding-top: 100px;
-      background: #fff;
+      background: #dbd4d1;
       height: 100vh;
-      max-width: 300px;
+      width: 180%;
       transform: translate(-150%);
       display: flex;
       flex-direction: column;
@@ -139,11 +152,13 @@ height: max-content;
       margin-bottom: 1.5rem;
       font-size: 1.3rem;
       font-weight: 500;
+      background-color: #dbd4d1;
     }
   
-    .logo {
+    .idavid80 {
+      order: 2;
       position: absolute;
-      top: 5px;
+      top: 12px;
       right: 15px;
       font-size: 2rem;
     }
@@ -163,4 +178,4 @@ height: max-content;
     .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
       transform: rotate(-35deg);
     }
-  
+}
