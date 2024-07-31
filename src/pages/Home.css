@@ -1,0 +1,111 @@
+#home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.home-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.section-home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.cita {
+    padding: 2%;
+}
+
+.section-text{
+    line-height: 1.6;
+    width: 60%;
+
+}
+
+.section-text p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+
+.cursor {
+    display: inline-block;
+    width: 1px;
+    background-color: black;
+  }
+
+
+@media (max-width: 768px) {
+
+    #home{
+        height: 100%;
+        margin: 5%;
+        margin-top: 12%;
+    }
+    .section-home {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 30px;
+    }
+
+    .section-text{
+        width: 100%;
+    }
+}
+
+/*
+.section-text {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-text h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.section-text .cita {
+  font-style: italic;
+  color: #555;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.section-text .cursor {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.section-text p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.section-text p:last-child {
+  margin-bottom: 0;
+}
+*/
