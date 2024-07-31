@@ -11,4 +11,6 @@ internalization with i18next:
 
 > npm install react-i18next i18next --save
 
+Un componente es una factoria de elementos o función que ejecuta u elemento. Y el elemento es el que renderiza el html.
 
+https://bg.ibelick.com/

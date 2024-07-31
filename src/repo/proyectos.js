@@ -1,5 +1,6 @@
-export const proyect = [
+export const project = [
     {
+    id:1,
     name: "fragen",
     visit: 5,
     process: "100%",
@@ -7,9 +8,11 @@ export const proyect = [
     license: "free",
     header: "Aplicación realizada durante el curso de aprendizaje en The Bridge",
     descriptions: "",
-    created_by: "The bridge"
+    created_by: "The bridge",
+    github: 'https://github.com/orgs/TheBridge-Sevilla/repositories'
     },
     {
+    id:2,
     name: "Marvel",
     visit: 5,
     process: "100%",
@@ -17,19 +20,25 @@ export const proyect = [
     license: "free",
     header: "Aplicación presentada en el Desafío Tripulación The Bridge",
     descriptions: "",
-    created_by: "The bridge"
+    created_by: "The bridge",
+    github: 'https://github.com/orgs/TheBridge-Sevilla/repositories',
+    youtube: 'https://youtu.be/ZKiWECYqbhc'
     },
     {
+    id:3,
     name: "vinoApp",
     visit: 5,
     process: "25%",
-    date: "19/06/2024",
-    license: "free",
+    date: "13/06/2024",
+    license: "MIT license",
     header: "Aplicación del Trabajo Fin de Ciclo de DAM",
     descriptions: "",
-    created_by: "idavid80"
+    created_by: "idavid80",
+    github: 'https://github.com/idavid80/Proyecto_TFC',
+    presentation: 'https://www.canva.com/design/DAGHb6A1mdY/7kdQgMME8Gt7QjtWzoAs2g/view?utm_content=DAGHb6A1mdY&utm_campaign=designshare&utm_medium=link&utm_source=editor',
     },
     {
+    id:4,
     name: "1º DAM",
     visit: 5,
     process: "100%",
@@ -37,36 +46,43 @@ export const proyect = [
     license: "free",
     header: "Ejercicios sobre programación del primer año de DAM",
     descriptions: "",
-    created_by: "idavid80"
+    created_by: "idavid80",
+    github: 'https://github.com/idavid80/introduccion_JAVA'
     },
     {
+    id:5,
     name: "2º DAM",
     visit: 5,
     process: "100%",
-    date: "10/02/2024",
+    date: "28/02/2024",
     license: "free",
     header: "Ejercicios sobre programación del segundo año de DAM",
     descriptions: "",
-    created_by: "idavid80"
+    created_by: "idavid80",
+    github: 'https://github.com/idavid80/acceso_datos_2'
     },
     {
+    id:6,
     name: "Restaurant Lemon",
     visit: 5,
     process: "100%",
-    date: "19/06/2024",
+    date: "31/10/2023",
     license: "free",
     header: "Proyecto final del curso de Meta Front-end",
     descriptions: "",
-    created_by: "idavid80"
+    created_by: "idavid80",
+    github: 'https://github.com/idavid80/react-meta'
     },
     {
+    id:7,
     name: "Ejercicios Python Automatización",
     visit: 5,
     process: "100%",
-    date: "19/06/2024",
+    date: "31/10/2023",
     license: "free",
     eader: "Proyecto final del curso de Google Python",
     descriptions: "",
-    created_by: "idavid80"
+    created_by: "idavid80",
+    github: 'https://github.com/idavid80/Learning_python'
     }
 ];

@@ -1,30 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Nav from './components/nav/Nav'
-import Projects from './components/pages/Projects'
-import About from './components/pages/aboutMe'
-import Footer from '../src/components/footer/Footer'
-import SwitchButton from './components/SwitchButton'
-import Home from './components/pages/Home'
+import Nav from './pages/components/nav/Nav'
+import Projects from './pages/Projects'
+import About from './pages/AboutMe'
+import Footer from './pages/Footer'
+import Home from './pages/Home'
+import Curriculum from './pages/Curriculum'
 
 function App() {
 
   return (
 
-
-      // <div className='root'>
-      <div className='app'>
-            <Nav/>
-            <div className='pages'>
-            <Home />
-            <Projects />
-            <About />
-            
-            </div>
-            <Footer />
+    <div className='app'>
+     <Nav/>
+      <div className='pages'>
+        <Home/>
+        <Projects />
+        <About />
+        <Curriculum/>
+        <Footer />
       </div>
+    </div>
 
   )
 }

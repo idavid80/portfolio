@@ -1,0 +1,15 @@
+
+
+
+
+.stack-back, .stack-front, .stack-toggle {
+    margin-top: 8%;
+}
+
+@media (max-width: 768px) {
+
+    .stack{
+        height: 100%;
+        
+    }
+  }
