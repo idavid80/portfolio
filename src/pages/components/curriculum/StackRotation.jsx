@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import BackOrFrontToggle from './BackOrFrontToggle';
 import './StackRotation.css'
+import Frontend from './FrontEnd';
+import BackEnd from './BackEnd';
 
 const StackRotation = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -62,14 +64,12 @@ const StackRotation = () => {
       <div className='stack-card' style={{ transformStyle: 'preserve-3d' }}>
         {isChecked ? (
           <div className='stack-front' style={faceStyle}>
-            <h2 style={{ ...contentTextStyle, fontSize: '3em', letterSpacing: '1px', transform: 'rotateY(180deg) translateZ(90px)'}}>Front-End</h2>
-            <p style={{ ...contentTextStyle, fontSize: '1em', lineHeight: '1.6em', transform: 'rotateY(180deg) translateZ(90px)' }}>Front Description</p>
-          </div>
+<Frontend/>    
+</div>
         ) : (
           <div className='stack-back' style={backStyle}>
-            <h2 style={{ ...contentTextStyle, fontSize: '3em', letterSpacing: '1px', transform: 'rotateY(180deg) translateZ(90px)' }}>Back-End</h2>
-            <p style={{ ...contentTextStyle, fontSize: '1em', lineHeight: '1.6em', transform: 'rotateY(180deg) translateZ(90px)' }}>Back Description</p>
-          </div>
+<BackEnd/>
+         </div>
         )}
       </div>
     </div>

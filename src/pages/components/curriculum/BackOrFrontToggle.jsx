@@ -10,7 +10,9 @@ const BackOrFrontToggle = ({ isChecked, setIsChecked }) => {
   return (
     <div className="toggle-container">
       {/* Conecta el checkbox con el estado y manejador de cambio */}
+      
       <input 
+
         type="checkbox" 
         className="toggle-input" 
         checked={isChecked} 
@@ -30,6 +32,7 @@ const BackOrFrontToggle = ({ isChecked, setIsChecked }) => {
           <feColorMatrix result="goo" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" mode="matrix" in="blur"></feColorMatrix>
         </filter>
       </svg>
+      { isChecked? <h3 style={{color: '#fff', transform: 'rotateY(180deg) translateZ(90px)'}}>Backend</h3>: <h3 style={{color: '#fff'}}>Frontend</h3>}
     </div>
   );
 };
