@@ -1,13 +1,24 @@
 import React from "react";
 import "./CreditCard.css";
 import LogoPath from "../../../assets/images/icons/LogoPath";
+import fotoCV from "../../../assets/images/icons/fotoCV.png";
 
 const CreditCard = () => {
   return (
     <div className="flip-card">
       <div className="flip-card-inner">
+        
         <div className="flip-card-front">
-          <p className="heading_8264">DEVELOPER</p>
+        <div className="avatar-container">
+            <img 
+              width={50}
+              className="avatar" 
+              src={fotoCV}
+              alt="Avatar"
+            />
+          </div>
+          <p className="heading_developer">DEVELOPER</p>
+
           <svg
             className="logo"
             xmlns="http://www.w3.org/2000/svg"
