@@ -7,7 +7,6 @@ const SwitchButton = () => {
       <input class="toggle-input" id="toggle" name="toggle" type="checkbox" />
       <label class="toggle-label" for="toggle">
         <div class="cont-icon">
-        
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

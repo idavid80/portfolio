@@ -1,18 +1,21 @@
 import React from "react";
 
-const Logo = () => {
+const CustomSVG = ({ isDarkMode }) => {
+  const fillColor = isDarkMode ? "#FFFFFF" : "#000000"; // Color para dark mode y light mode
+
   return (
     <svg
+      version="1.0"
       xmlns="http://www.w3.org/2000/svg"
-      width="50"
-      height="50"
+      width="300.000000pt"
+      height="300.000000pt"
       viewBox="0 0 500.000000 500.000000"
       preserveAspectRatio="xMidYMid meet"
-      className="idavid80"
+      fill={fillColor}
+      fillOpacity="0.5"
     >
       <g
         transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)"
-        fill="#000"
         stroke="none"
       >
         <path
@@ -149,4 +152,4 @@ l327 -330 32 31 31 31 -303 303 -302 302 302 302 302 303 -29 30 c-16 16 -32
   );
 };
 
-export default Logo;
+export default CustomSVG;

@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
-import StackRotation from './components/curriculum/StackRotation';
-
-const Curriculum = () => {
+import React from "react";
+import StackRotation from "./components/curriculum/StackRotation";
 
 
+const Curriculum = ({ theme }) => {
   return (
-    <div id='curriculum'>
-      <StackRotation />
-      </div>
-    
+    <section id="curriculum" className="curriculum" style={{margin: '5%'}}>
+      <StackRotation theme={theme} />
+    </section>
   );
 };
 

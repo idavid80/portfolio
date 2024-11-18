@@ -1,8 +1,69 @@
 .app {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* App.css */
+
+/* Tema Claro (Por defecto) */
+:root {
+  --background-color: #e0e0e0;
+  --text-color: #121212;
+  --nav-background-color: #f5f5f5;
+  --footer-background-color: #f1f1f1;
+}
+
+/* Tema Oscuro */
+.dark-theme {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --nav-background-color: #1f1f1f;
+  --footer-background-color: #1a1a1a;
+  --color-title: #f0f0f0;
+}
+
+/* Aplicar las variables a tus componentes */
+.app {
+
+}
+
+nav {
+  background-color: var(--nav-background-color);
+}
+
+footer {
+  background-color: var(--footer-background-color);
+}
+
+.theme-toggle {
+  padding: 10% 20%;
+  margin: 20px;
+  background-color: var(--nav-background-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--footer-background-color);
+}
+
+/*
+.page {
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+
+    margin-top: 64px; 
+  
+
+}
+*/
 /* #root {
   max-width: 1280px;
   margin: 0 auto;

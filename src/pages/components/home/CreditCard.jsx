@@ -1,22 +1,44 @@
-import React from 'react';
-import './CreditCard.css'
-import idavid80 from '../../../assets/images/icons/idavid80.svg'
-import LogoPath from '../../../assets/images/icons/LogoPath';
+import React from "react";
+import "./CreditCard.css";
+import LogoPath from "../../../assets/images/icons/LogoPath";
 
 const CreditCard = () => {
-
-  
   return (
     <div className="flip-card">
-    <div className="flip-card-inner">
+      <div className="flip-card-inner">
         <div className="flip-card-front">
-            <p className="heading_8264">DEVELOPER</p>
-            <svg className="logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 500 500">
-            <LogoPath/>
-            </svg>
-            <svg version="1.1" className="chip" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 50 50" xmlSpace="preserve">
-              
-               <image id="image0" width="50" height="50" x="0" y="0" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+          <p className="heading_8264">DEVELOPER</p>
+          <svg
+            className="logo"
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="50"
+            height="50"
+            viewBox="0 0 500 500"
+          >
+            <LogoPath />
+          </svg>
+          <svg
+            version="1.1"
+            className="chip"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            width="30px"
+            height="30px"
+            viewBox="0 0 50 50"
+            xmlSpace="preserve"
+          >
+            <image
+              id="image0"
+              width="50"
+              height="50"
+              x="0"
+              y="0"
+              href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
               AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB6VBMVEUAAACNcTiVeUKVeUOY
               fEaafEeUeUSYfEWZfEaykleyklaXe0SWekSZZjOYfEWYe0WXfUWXe0WcgEicfkiXe0SVekSXekSW
               ekKYe0a9nF67m12ZfUWUeEaXfESVekOdgEmVeUWWekSniU+VeUKVeUOrjFKYfEWliE6WeESZe0GS
@@ -41,28 +63,25 @@ const CreditCard = () => {
               S24ra7Tq1cbWjpXV3sHRCb1idXZ0sGdltXNxRateRwHRAACYHutzk/2I5QAAACV0RVh0ZGF0ZTpj
               cmVhdGUAMjAyMy0wMi0xM1QwODoxNToyOSswMDowMEUnN7UAAAAldEVYdGRhdGU6bW9kaWZ5ADIw
               MjMtMDItMTNUMDg6MTU6MjkrMDA6MDA0eo8JAAAAKHRFWHRkYXRlOnRpbWVzdGFtcAAyMDIzLTAy
-              LTEzVDA4OjE1OjI5KzAwOjAwY2+u1gAAAABJRU5ErkJggg=="></image>
-            </svg>
-            <svg version="1.1" className="contactless" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 50 50" xmlSpace="preserve"> 
-            <image id="image0" width="50" height="50" x="0" y="0" src={idavid80}></image>
-            </svg>
-            <p className="number">0127 0000 0000 1000</p>
-            <p className="valid_thru">VALIDO DESDE</p>
-            <p className="date_8264"> 06 / 24</p>
-            <p className="name">DAVID DOMINGUEZ BUENO</p>
+              LTEzVDA4OjE1OjI5KzAwOjAwY2+u1gAAAABJRU5ErkJggg=="
+            ></image>
+          </svg>
+          <p className="number">0422 0623 1024 0628</p>
+          <p className="valid_thru">VALIDO DESDE</p>
+          <p className="date_8264"> 06 / 24</p>
+          <p className="name">DAVID DOMINGUEZ BUENO</p>
         </div>
         <div className="flip-card-back">
-            <div className="strip"></div>
-            <div className="mstrip">
+          <div className="strip"></div>
+          <div className="mstrip">
             <p className="code">GPA DAM</p>
-            </div>
-            <div className="sstrip">
-              <p className="code">9,34</p>
-            </div>
+          </div>
+          <div className="sstrip">
+            <p className="code">9,34</p>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-
   );
 };
 

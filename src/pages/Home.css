@@ -1,68 +1,70 @@
 #home {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
 .home-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-.section-home {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-
+.home-presentation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .cita {
-    padding: 2%;
+  padding: 2%;
+  font-style: italic;
 }
 
-.section-text{
-    line-height: 1.6;
-    width: 60%;
-
+.section-text {
+  line-height: 1.6;
+  width: 60%;
 }
 
 .section-text p {
-    font-size: 1rem;
-    color: #444;
-    margin-bottom: 20px;
-    text-align: justify;
-  }
-
-.cursor {
-    display: inline-block;
-    width: 1px;
-    background-color: black;
-  }
-
-
-@media (max-width: 768px) {
-
-    #home{
-        height: 100%;
-        margin: 5%;
-        margin-top: 12%;
-    }
-    .section-home {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        row-gap: 30px;
-    }
-
-    .section-text{
-        width: 100%;
-    }
+  font-size: 1rem;
+  margin-bottom: 20px;
+  text-align: justify;
 }
 
+@media (max-width: 768px) {
+  #home {
+    height: 100%;
+  }
+  .home-header {
+    margin-top: 18%;
+  }
+  .home-presentation {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+    margin-bottom: 3%;
+  }
+
+  .section-text {
+    width: 90%;
+  }
+}
+
+/* Prueba*/
 /*
+.logo-idavid .light svg path {
+  fill: blue; 
+}
+
+.logo-idavid .dark svg path {
+  fill: red; 
+}
+
+
 .section-text {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;

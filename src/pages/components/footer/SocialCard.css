@@ -12,7 +12,13 @@
 .background {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 100% 107%, #ff89cc 0%, #9cb8ec 30%, #00ffee 60%, #62c2fe 100%);
+  background: radial-gradient(
+    circle at 100% 107%,
+    #ff89cc 0%,
+    #9cb8ec 30%,
+    #00ffee 60%,
+    #62c2fe 100%
+  );
 }
 
 .rss {
@@ -75,7 +81,13 @@
 }
 
 .box1::before {
-  background: radial-gradient(circle at 30% 107%, hsl(0, 0%, 100%) 0%, #0c0c0b 5%, hsl(300, 1%, 13%) 60%, #000000 90%);
+  background: radial-gradient(
+    circle at 30% 107%,
+    hsl(0, 0%, 100%) 0%,
+    #0c0c0b 5%,
+    hsl(300, 1%, 13%) 60%,
+    #000000 90%
+  );
 }
 
 .box1:hover::before {
@@ -95,7 +107,7 @@
 }
 
 .box2::before {
-  background: radial-gradient(circle at 30% 107%, #91e9ff 0%, #00ACEE 90%);
+  background: radial-gradient(circle at 30% 107%, #91e9ff 0%, #00acee 90%);
 }
 
 .box2:hover::before {
@@ -115,7 +127,13 @@
 }
 
 .box3::before {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #ff53d4 60%, #62c2fe 90%);
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #ff53d4 60%,
+    #62c2fe 90%
+  );
 }
 
 .box3:hover::before {

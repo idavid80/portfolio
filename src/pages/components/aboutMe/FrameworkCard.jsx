@@ -1,5 +1,5 @@
-import React from 'react';
-import './FrameworkCard.css';
+import React from "react";
+import "./FrameworkCard.css";
 
 const ProgressBar = ({ percentage }) => {
   return (

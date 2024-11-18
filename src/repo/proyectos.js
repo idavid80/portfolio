@@ -2,7 +2,7 @@ export const project = [
     {
     id:1,
     name: "fragen",
-    visit: 5,
+    visit: 21,
     process: "100%",
     date: "01/12/2022",
     license: "free",
@@ -14,7 +14,7 @@ export const project = [
     {
     id:2,
     name: "Marvel",
-    visit: 5,
+    visit: 32,
     process: "100%",
     date: "01/01/2023",
     license: "free",
@@ -27,7 +27,7 @@ export const project = [
     {
     id:3,
     name: "vinoApp",
-    visit: 5,
+    visit: 8,
     process: "25%",
     date: "13/06/2024",
     license: "MIT license",
@@ -40,7 +40,7 @@ export const project = [
     {
     id:4,
     name: "1º DAM",
-    visit: 5,
+    visit: 2,
     process: "100%",
     date: "19/06/2023",
     license: "free",
@@ -52,7 +52,7 @@ export const project = [
     {
     id:5,
     name: "2º DAM",
-    visit: 5,
+    visit: 3,
     process: "100%",
     date: "28/02/2024",
     license: "free",
@@ -64,7 +64,7 @@ export const project = [
     {
     id:6,
     name: "Restaurant Lemon",
-    visit: 5,
+    visit: 15,
     process: "100%",
     date: "31/10/2023",
     license: "free",
@@ -76,13 +76,25 @@ export const project = [
     {
     id:7,
     name: "Ejercicios Python Automatización",
-    visit: 5,
+    visit: 4,
     process: "100%",
     date: "31/10/2023",
     license: "free",
-    eader: "Proyecto final del curso de Google Python",
+    header: "Proyecto final del curso de Google Python",
     descriptions: "",
     created_by: "idavid80",
     github: 'https://github.com/idavid80/Learning_python'
-    }
+    },
+    {
+    id:8,
+    name: "Curso IBM DataScience",
+    visit: 8,
+    process: "100%",
+    date: "13/11/2024",
+    license: "free",
+    header: "Proyecto final del curso de IBM DataScience",
+    descriptions: "Certificado Profesional en Ciencia de Datos es un programa de 12 cursos diseñado para prepararte para una carrera como científico de datos",
+    created_by: "idavid80",
+    github: 'https://github.com/idavid80/DataScience'
+        }
 ];
