@@ -11,7 +11,7 @@ src/
 │
 ├── App.css                 # Estilos generales de la aplicación.
 ├── App.jsx                 # Punto de entrada principal.
-├── assets/images                  # Contiene las páginas principales de la aplicación.
+├── assets/images                  # Contiene los recursos de la aplicación.
 │           └── framewors/
 │           └── icons/
 ├── hooks/
@@ -21,34 +21,32 @@ src/
 ├── pages/                  # Contiene las páginas principales de la aplicación.
 │   ├── AboutMe.jsx         # Página "Sobre Mí".
 │   ├── Curriculum.jsx      # Página con detalles del currículum.
-│   ├── Footer.jsx          # Componente Footer compartido en todas las páginas.
+│   ├── Footer.jsx          # Componente Footer con Redes sociales
 │   ├── Home.jsx            # Página de inicio.
 │   ├── Projects.jsx        # Página de proyectos.
 │   └── components/
 │       └── aboutMe/
-│           ├── FrameworCard.jsx     # Componente de navegación.
-│           └── InfoSkills.jsx     # Estilos del componente de navegación.
-│           ├── Modal.jsx     # Componente de navegación.
+│           ├── FrameworCard.jsx     
+│           └── InfoSkills.jsx     
+│           ├── Modal.jsx     
 │           └── SkillBar.jsx  
 │       └── curriculum/
-│           ├── BackOrFrontToogle.jsx     # Componente de navegación.
-│           └── CardExperience.jsx     # Estilos del componente de navegación.
-│           ├── StackRotation.jsx     # Componente de navegación.
+│           ├── BackOrFrontToogle.jsx     # Toggle para detectar tarjeta frontend o backend.
+│           └── CardExperience.jsx     # Tarjeta giratoria con experiencia frontend o backend..
+│           ├── StackRotation.jsx     # Paginación de la tarjeta giratoria.
 │       └── footer/
-│           ├── Loadinf.jsx     # Componente de navegación.
-│           └── SocialCard.jsx     # Estilos del componente de navegación.
-│           ├── Tooltips.jsx     # Componente de navegación.
-│       └── header/ # Eliminar
-│           ├── Header.jsx     # Componente de navegación.
+│           ├── Loanding.jsx     # Componente de carga bolas .
+│           └── SocialCard.jsx     # Componente Redes sociales.
+│           ├── Tooltips.jsx     # Componente iconos Redes sociales.
 │       └── home/ # Eliminar
-│           ├── CreditCard.jsx     # Componente de navegación.
+│           ├── CreditCard.jsx     # Componente de carnet developer.
 │       └── nav/
 │           ├── Nav.jsx     # Componente de navegación.
 │           └── Nav.css     # Estilos del componente de navegación.
 │       └── project/
-│           ├── Carrussell.jsx     # Componente de navegación.
-│           └── IconLinks.jsx     # Estilos del componente de navegación.
-│           └── ProjectCard.jsx     # Estilos del componente de navegación.
+│           ├── Carrussell.jsx     # Componente de proyectos.
+│           └── IconLinks.jsx     # Links con iconos relacionados con el proyecto
+│           └── ProjectCard.jsx     # Tarjeta por proyectos
 │
 └── index.css               # Estilos globales.
 
