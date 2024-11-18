@@ -37,6 +37,7 @@
 @media (max-width: 768px) {
   #home {
     height: 100%;
+    max-width: 100vw;
   }
   .home-header {
     margin-top: 18%;

@@ -4,6 +4,7 @@
   justify-content: end;
   align-items: center;
   height: 100vh;
+  width: 100%;
 }
 
 .autor {
@@ -16,5 +17,6 @@
     height: 100%;
     margin: 5%;
     margin-top: 12%;
+    max-width: 100vw;
   }
 }

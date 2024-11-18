@@ -22,15 +22,22 @@ const Carrusell = ({ data }) => {
     }, 3000);
   };
 
-  // Reiniciar el intervalo cada vez que se monte el componente
   useEffect(() => {
     resetInterval(); // Iniciar el intervalo al cargar el componente
-    return () => clearInterval(intervalRef.current); // Limpiar el intervalo al desmontar
-  }, []);
+
+    // Limpiar el intervalo al desmontar
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, []); // Solo ejecuta una vez cuando el componente se monte
 
   const handleButtonClick = (index) => {
-    setCurrentIndex(index); // Cambiar de proyecto actual
-    resetInterval(); // Reiniciar el intervalo
+    if (currentIndex !== index) {
+      setCurrentIndex(index); // Cambiar de proyecto actual
+      resetInterval(); // Reiniciar el intervalo solo si es necesario
+    }
   };
 
   const styles = {
@@ -38,8 +45,8 @@ const Carrusell = ({ data }) => {
       display: "flex",
       flexWrap: "nowrap",
       overflow: "hidden",
+      position: "relative",
     },
-
     card: {
       marginTop: "2%",
       height: "100%",
@@ -48,14 +55,17 @@ const Carrusell = ({ data }) => {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      transition: "1s cubic-bezier(0.39,0.575,0.565,1)",
+      transition: "1s cubic-bezier(0.39, 0.575, 0.565, 1)",
       transform: `translateX(-${currentIndex * 100}%)`,
     },
     buttons: {
       display: "flex",
       justifyContent: "center",
+      position: "absolute",
+      bottom: "20px", 
+      width: "100%",
+      zIndex: 10, 
     },
-
     item: {
       width: "15px",
       height: "15px",
@@ -72,6 +82,7 @@ const Carrusell = ({ data }) => {
       },
     },
   };
+
   return (
     <div>
       <div style={styles.container}>
@@ -86,8 +97,8 @@ const Carrusell = ({ data }) => {
           <button
             key={index}
             style={{
-              ...styles.item, // Estilos base
-              ...(currentIndex === index ? styles.item.active : {}), // Añade estilos "active" si es el índice actual
+              ...styles.item, 
+              ...(currentIndex === index ? styles.item.active : {}),
             }}
             onClick={() => handleButtonClick(index)}
           ></button>

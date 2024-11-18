@@ -1,5 +1,5 @@
 .modal-overlay {
-  position: fixed;
+  
   top: 0;
   left: 0;
   right: 0;
@@ -31,4 +31,11 @@
 
 .content-title {
   font-weight: bold;
+}
+@media (max-width: 768px) {
+  .modal-overlay{
+    height: 100%;
+    max-width: 100%;
+  }
+
 }

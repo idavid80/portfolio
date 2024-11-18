@@ -18,6 +18,7 @@ const SkillsBar = ({ title, skills, theme }) => {
     return (
       <div className="progress-bar">
         <div className="filler" style={{ width: `${percentage}%` }} />
+        
       </div>
     );
   };
@@ -53,51 +54,9 @@ const SkillsBar = ({ title, skills, theme }) => {
           </div>
         );
       })}
-      <Modal isOpen={modalIsOpen} onClose={closeModal} content={modalContent} />
+      <Modal className='modal-text' isOpen={modalIsOpen} onClose={closeModal} content={modalContent} />
     </div>
   );
 };
 
 export default SkillsBar;
-
-/*
-import React, { useState } from "react";
-import './SkillsBar.css'
-
-
-const SkillsBar = ({ title, skills }) => {
-
-    const ProgressBar = ({ percentage }) => {
-        return (
-            <div className="progress-bar">
-                <div className="filler" style={{ width: `${percentage}%` }} />
-            </div>
-        );
-    };
-
-    return (
-        <div className="skill-card">
-            <h1 className="skill-title-text">{title} {skills.skill}</h1>
-            {skills.map((data) => {
-                return (
-                    <div className="skill-box" key={data.lenght + 1}>
-                        <div className="skill-progress">
-                            <div className="skill-framework">
-                                <img className="skill-icon" src={data.icon} alt={data.skill} /> 
-                                <span className="skill-text">{data.skill}</span>
-                            </div>
-                            <span>{data.progress} %</span>
-                            
-                        </div>
-
-                        <ProgressBar percentage={data.progress} />
-                    </div>
-                )
-            })}
-        </div>
-    );
-}
-
-
-export default SkillsBar;
-*/

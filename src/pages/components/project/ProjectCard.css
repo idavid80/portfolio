@@ -1,9 +1,10 @@
 .project {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     border-radius: 20px;
     background: #1b233d;
     padding: 5px;
-    overflow: hidden;
+    overflow: auto;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 20px 0px;
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
