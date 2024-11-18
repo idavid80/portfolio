@@ -10,10 +10,6 @@ import { viewMode } from "./hooks/viewMode";
 function App() {
   const [darkMode, setDarkMode] = viewMode();
 
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-  };
-
   return (
     <div className="app">
       <Nav darkMode={darkMode} setDarkMode={setDarkMode} />
