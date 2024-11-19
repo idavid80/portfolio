@@ -59,12 +59,9 @@ const Carrusell = ({ data }) => {
       transform: `translateX(-${currentIndex * 100}%)`,
     },
     buttons: {
+      marginTop: '1%',
       display: "flex",
       justifyContent: "center",
-      position: "absolute",
-      bottom: "20px", 
-      width: "100%",
-      zIndex: 10, 
     },
     item: {
       width: "15px",

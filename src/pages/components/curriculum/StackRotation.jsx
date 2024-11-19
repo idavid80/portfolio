@@ -87,10 +87,10 @@ const StackRotation = ({ theme }) => {
   };
 
   const toggleStyle = {
-    //position: 'fixed',
-    //top: '1%',
-    //left: '-5%',
-    //zIndex: 1000,
+    position: 'fixed',
+    top: '1%',
+    left: '-5%',
+    zIndex: 1000,
   };
 
   let titulo = isChecked ? "Backend" : "Frontend";

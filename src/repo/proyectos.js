@@ -75,7 +75,7 @@ export const project = [
     },
     {
     id:7,
-    name: "Ejercicios Python Automatización",
+    name: "Python Automatización",
     visit: 4,
     process: "100%",
     date: "31/10/2023",

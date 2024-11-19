@@ -25,6 +25,7 @@ const Projects = ({ theme }) => {
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
+      
     },
     title: {
       marginTop: isMobile ? "0%" : "10%",
