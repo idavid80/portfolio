@@ -110,10 +110,10 @@ La aplicación detecta si el dispositivo es móvil mediante el hook `isMobile` y
 ## ✨ Capturas de Pantalla  
 
 ### 💻 Modo Claro  
-*(Captura de pantalla del modo claro)*  
+![alt text](./public/light_modo.png)
 
 ### 🌙 Modo Oscuro  
-*(Captura de pantalla del modo oscuro)*  
+![alt text](./public/dark_modo.png)
 
 ---
 
