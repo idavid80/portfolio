@@ -9,13 +9,13 @@ La estructura del proyecto sigue una arquitectura modular para mantener el códi
 ```bash
 src/
 │
-├── App.css                 # Estilos generales de la aplicación.
-├── App.jsx                 # Punto de entrada principal.
-├── assets/images                  # Contiene los recursos de la aplicación.
+├── App.css    # Estilos generales de la aplicación.
+├── App.jsx    # Punto de entrada principal.
+├── assets/images  # Contiene los recursos de la aplicación.
 │           └── framewors/
 │           └── icons/
 ├── hooks/
-│   ├── isMobile.js         # Hook personalizado para detectar dispositivos móviles.
+│   ├── useIsMobile.js      # Hook personalizado para detectar dispositivos móviles.
 │   └── viewMode.js         # Hook para manejar el modo oscuro/claro.
 │
 ├── pages/                  # Contiene las páginas principales de la aplicación.
@@ -26,29 +26,36 @@ src/
 │   ├── Projects.jsx        # Página de proyectos.
 │   └── components/
 │       └── aboutMe/
-│           ├── FrameworCard.jsx     
-│           └── InfoSkills.jsx     
-│           ├── Modal.jsx     
-│           └── SkillBar.jsx  
+│           ├── FrameworkCard.jsx # Componente que contiene las skills.
+│           └── InfoSkills.jsx    # Componente que contiene las skills.     
+│           ├── Modal.jsx         # Componente que contiene los textos explicando la experiencia con el frameworks. 
+│           ├── Modal.css         # Hoja de estilos de Modal.jsx.
+│           └── SkillBar.jsx      # Componente que contiene las skills.
+│           └── SkillBar.css      # Hoja de estilos de SkillBar.jsx.
 │       └── curriculum/
-│           ├── BackOrFrontToogle.jsx     # Toggle para detectar tarjeta frontend o backend.
-│           └── CardExperience.jsx     # Tarjeta giratoria con experiencia frontend o backend..
-│           ├── StackRotation.jsx     # Paginación de la tarjeta giratoria.
+│           ├── BackOrFrontToogle.jsx   # Toggle para detectar tarjeta frontend o backend.
+│           ├── BackOrFrontToogle.css   # Hoja de estilos de BackOrFrontToogle.jsx.
+│           └── CardExperience.jsx      # Tarjeta giratoria con experiencia frontend o backend..
+│           ├── StackRotation.jsx       # Paginación de la tarjeta giratoria.
 │       └── footer/
-│           ├── Loanding.jsx     # Componente de carga bolas .
-│           └── SocialCard.jsx     # Componente Redes sociales.
+│           ├── Loanding.jsx     # Componente de carga bolas de carga.
+│           ├── Loanding.css     # Hoja de estilos de Loanding.jsx.
+│           └── SocialCard.jsx   # Componente Redes sociales.
+│           └── SocialCard.css   # Hoja de estilos de SocialCard.jsx.
 │           ├── Tooltips.jsx     # Componente iconos Redes sociales.
-│       └── home/ # Eliminar
-│           ├── CreditCard.jsx     # Componente de carnet developer.
+│           ├── Tooltips.css     # Hoja de estilos de Tooltips.jsx.
+│       └── home/ 
+│           ├── CreditCard.jsx   # Componente de carnet developer.
+│           ├── CreditCard.css   # Hoja de estilos de CreditCard.jsx.
 │       └── nav/
-│           ├── Nav.jsx     # Componente de navegación.
-│           └── Nav.css     # Estilos del componente de navegación.
+│           ├── Nav.jsx  # Componente de navegación.
+│           └── Nav.css  # Hoja de estilos del componente de navegación.
 │       └── project/
-│           ├── Carrussell.jsx     # Componente de proyectos.
+│           ├── Carrussell.jsx    # Componente de proyectos.
 │           └── IconLinks.jsx     # Links con iconos relacionados con el proyecto
-│           └── ProjectCard.jsx     # Tarjeta por proyectos
+│           └── ProjectCard.jsx   # Tarjeta por proyectos
 │
-└── index.css               # Estilos globales.
+└── index.css  # Estilos globales.
 
 ```
 
