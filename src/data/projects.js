@@ -23,7 +23,7 @@ export const projectsData = [
     category: "Web",
     image: marvelImg,
     demoLink: "https://youtu.be/ZKiWECYqbhc",
-    codeLink: "https://www.canva.com/design/DAGHb6A1mdY/jxqFCNtxgbbWAZ8ekCSxvQ/edit",
+    codeLink: "https://github.com/orgs/TheBridge-Sevilla/repositories",
     iframe: "https://foil-creek-c56.notion.site/ebd/22ed0a3946df81c4bdebdac89dae6b46"
   },
   {
