@@ -7,6 +7,13 @@ import dark_logo from "../../assets/icons/dark_logo.png";
 import './Navbar.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTheme } from '../../contexts/ThemeContext';
+import { 
+  IoHomeOutline, 
+  IoPersonOutline, 
+  IoCodeSlashOutline, 
+  IoNewspaperOutline, 
+  IoMailOutline 
+} from "react-icons/io5";
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
@@ -21,13 +28,13 @@ export default function Navbar() {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const navLinks = React.useMemo(() => [
-    { id: 'home', text: t('nav.home') },
-    { id: 'about', text: t('nav.about') },
-    { id: 'projects', text: t('nav.projects') },
-    { id: 'blog', text: t('nav.blog') },
-    { id: 'contact', text: t('nav.contact')},
-  ], [t]);
+const navLinks = React.useMemo(() => [
+  { id: 'home', text: t('nav.home'), icon: <IoHomeOutline /> },
+  { id: 'about', text: t('nav.about'), icon: <IoPersonOutline /> },
+  { id: 'projects', text: t('nav.projects'), icon: <IoCodeSlashOutline /> },
+  { id: 'blog', text: t('nav.blog'), icon: <IoNewspaperOutline /> },
+  { id: 'contact', text: t('nav.contact'), icon: <IoMailOutline /> },
+], [t]);
 
   const scrollToSection = (id) => {
     const performScroll = () => {
@@ -87,6 +94,7 @@ export default function Navbar() {
               onClick={() => scrollToSection(link.id)}
               className={`nav-item ${activeSection === link.id ? 'active' : ''}`}
             >
+              <span className="nav-icon">{link.icon}</span>
               {link.text}
             </button>
           ))}
@@ -114,10 +122,12 @@ export default function Navbar() {
             onClick={() => scrollToSection(link.id)}
             className={`mobile-nav-item ${activeSection === link.id ? 'active' : ''}`}
           >
+            <span className="nav-icon">{link.icon}</span>
             {link.text}
           </button>
         ))}
       </div>
+
     </nav>
   );
 }
