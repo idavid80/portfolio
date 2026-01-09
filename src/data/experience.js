@@ -20,7 +20,7 @@ export const experienceData = [
     id: 2,
     category: "Research",
     translationKey: "status",
-    image: "https://media.licdn.com/dms/image/v2/C4D0BAQFeIC0XDU7cug/company-logo_100_100/company-logo_100_100/0/1630518578339/universidad_de_sevilla_logo?e=1769644800&v=beta&t=xRPcnhUKNvPgU9ls6hzWBYL-tpMS7bgFrJDW2W95z4M",
+    image: "https://www.uca.es/wp-content/uploads/2022/02/big-33.jpg",
     stack: [
       "React",
       "Express.js",
@@ -36,7 +36,7 @@ export const experienceData = [
     id: 3,
     translationKey: "perseo",
     category: "Research",
-    image: "https://media.licdn.com/dms/image/v2/C4D0BAQFeIC0XDU7cug/company-logo_100_100/company-logo_100_100/0/1630518578339/universidad_de_sevilla_logo?e=1769644800&v=beta&t=xRPcnhUKNvPgU9ls6hzWBYL-tpMS7bgFrJDW2W95z4M",
+    image: "https://www.uca.es/wp-content/uploads/2022/02/big-33.jpg",
     stack: [
       "Python",
       "OCEL",

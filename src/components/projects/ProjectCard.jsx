@@ -2,9 +2,12 @@ import { FaGithub } from "react-icons/fa";
 import { FiEye, FiInfo } from "react-icons/fi";
 import GlassCard from "../ui/GlassCard";
 
-const ProjectCard = ({ project, t, onInfoClick }) => {
+const ProjectCard = ({ project, t, onInfoClick, ...props}) => {
   return (
-    <GlassCard image={project.image} imageAlt={t(project.titleKey)}>
+    <GlassCard
+      {...props}
+      image={project.image}
+      imageAlt={t(project.titleKey)}>
       <h3 className="project-title">{t(project.titleKey)}</h3>
       <p className="project-desc">{t(project.descriptionKey)}</p>
 

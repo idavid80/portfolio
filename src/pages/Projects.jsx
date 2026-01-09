@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { projectsData } from "../data/projects";
 import Modal from "../components/ui/Modal";
-// IMPORTAMOS EL COMPONENTE NUEVO
 import ProjectCard from "../components/projects/ProjectCard"; 
 import "./styles/Projects.css";
 import { 
@@ -25,10 +24,15 @@ export default function Projects({ id }) {
     { key: "Big Data", label: t("projects.filter_bigdata") },
   ];
 
+  // 1. PRIMERO: Definimos la lógica de filtrado
   const filteredProjects =
     filter === "All"
       ? projectsData
       : projectsData.filter((p) => p.category === filter);
+
+  // 2. SEGUNDO: Ahora sí podemos hacer debug porque la variable ya existe
+  console.log("Filtro actual:", filter);
+  console.log("Proyectos filtrados:", filteredProjects);
 
   return (
     <section id={id} className="projects">
@@ -66,8 +70,9 @@ export default function Projects({ id }) {
 
         {/* Grid de Proyectos */}
         <motion.div
+          layout // IMPORTANTE: Para que se reordenen suavemente
           className="projects-grid"
-          variants={containerVariants} // El grid orquesta
+          variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={viewportConfig}
@@ -77,8 +82,11 @@ export default function Projects({ id }) {
               <ProjectCard
                 key={project.id}
                 project={project}
-                t={t }
+                t={t}
                 onInfoClick={setActiveProject}
+                animate="visible"
+                initial="hidden"
+                exit="hidden"
               />
             ))}
           </AnimatePresence>

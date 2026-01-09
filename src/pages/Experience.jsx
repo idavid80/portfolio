@@ -79,6 +79,9 @@ export default function Experience({ id }) {
                 exp={exp}
                 t={t}
                 onInfoClick={setActiveExp}
+                animate="visible"
+                initial="hidden"
+                exit="hidden"
               />
             ))}
           </AnimatePresence>
