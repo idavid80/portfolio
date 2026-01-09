@@ -3,6 +3,7 @@
     "home": "Inicio",
     "about": "Sobre mí",
     "projects": "Proyectos",
+    "experience": "Experiencia",
     "blog": "Blog",
     "contact": "Contacto"
   },
@@ -85,6 +86,37 @@
     "message": {
       "min": "El mensaje debe tener al menos 10 caracteres",
       "max": "El mensaje no puede superar los 500 caracteres"
+    }
+  },
+  "experience": {
+    "title": "Experiencia",
+    "filter_all": "Todo",
+    "filter_research": "Investigación",
+    "filter_dev": "Desarrollo",
+    "filter_cloud": "Cloud",
+    "more_info": "Más información",
+    "work_history": {
+        "rovimatica": {
+        "title": "Departamento de I+D+i",
+        "company": "Rovimatica S.L.",
+        "date": "Marzo 2024 - Junio 2024",
+        "desc": "Investigación e implementación sobre conexiones gRPC y RESTful, sistema de autentificación ORY (Kratos, Hydra y Keto). Detección de movimiento y objetos por computer visión (OpenCV y YOLOv8).",
+        "more": "Mi experiencia en el departamento de I+D+i Rovimática se dividió en dos grandes vertientes: la consolidación de infraestructuras de comunicación moderna y la exploración de tecnologías de inteligencia visual. En el ámbito del Desarrollo de Software, mi principal desafío fue optimizar la comunicación entre dispositivos móviles y servidores. Migré flujos de trabajo tradicionales a gRPC, reduciendo la latencia entre la App (Flutter) y el Backend (Django/Node). Además, elevé el estándar de seguridad integrando la suite ORY. Para lograr una integración fluida, programé un componente crítico: un middleware en Golang que actuaba como puente de seguridad, gestionando autenticaciones complejas de forma transparente para el usuario final. Durante mis últimas semanas, exploré las capacidades de OpenCV y YOLOv8. Creé una biblioteca de scripts de prueba de concepto que incluía: Sistemas de Inspección: Herramientas capaces de definir ROIs (Regiones de Interés) manuales para calcular áreas y detectar defectos o manchas en superficies. Reconocimiento de Patrones: Algoritmos capaces de clasificar formas geométricas en video en tiempo real y separar canales de color (RGB/HSV) para análisis espectral. Tracking Inteligente: Sistemas de seguimiento de objetos específicos en movimiento, filtrando ruido ambiental y condiciones de luz variables."
+      },
+      "status": {
+        "title": "Proyecto STATUS",
+        "company": "Universidad de Sevilla",
+        "date": "Marzo 2025 - Agosto 2024",
+        "desc": "Sistema de gesTión de conformidAd mulTi-dominio basado en mashUpS (STATUS)",
+        "more": "Mi contribución principal al proyecto STATUS se centró en dos pilares: la fiabilidad del código y la seguridad de la infraestructura.\n\n1. Calidad de Software (QA): Diseñé y ejecuté una suite exhaustiva de pruebas unitarias y de integración para el backend utilizando Vitest. Esto permitió aumentar la cobertura de código, detectar regresiones tempranas y asegurar la estabilidad de la lógica de negocio.\n\n2. Seguridad Avanzada: Lideré la implementación de un sistema de Autenticación de Doble Factor (2FA) end-to-end, integrando la interfaz de usuario en React con los protocolos de seguridad del servidor. Además, fortifiqué la gestión de credenciales mediante la adopción de un Gestor de Secretos, eliminando información sensible del código fuente y mejorando la postura de seguridad del despliegue."
+      },
+      "perseo": {
+        "title": "Proyecto PERSEO",
+        "company": "Universidad de Sevilla",
+        "date": "Enero 2026 - Actualidad",
+        "desc": "Operación y mejora continua de procesos en servicios digitales por medio de la colaboración bot-humano",
+        "more": "Implementación de pruebas de concepto, prototipos y herramientas software relacionadas con los siguientes paquetes de trabajo del proyecto PERSEO: WP1: Desarrollo de bots,  WP3: Gestión de procesos y productividad aplicada a SE, WP4: Soporte operativo automatizado de KIP y WP5: Mejora continua del rendimiento de procesos y personas"
+      }
     }
   }
 }

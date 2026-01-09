@@ -1,3 +1,5 @@
+
+
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -12,7 +14,8 @@ import {
   IoPersonOutline, 
   IoCodeSlashOutline, 
   IoNewspaperOutline, 
-  IoMailOutline 
+  IoMailOutline ,
+  IoBriefcaseOutline,
 } from "react-icons/io5";
 
 export default function Navbar() {
@@ -28,13 +31,26 @@ export default function Navbar() {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-const navLinks = React.useMemo(() => [
-  { id: 'home', text: t('nav.home'), icon: <IoHomeOutline /> },
-  { id: 'about', text: t('nav.about'), icon: <IoPersonOutline /> },
-  { id: 'projects', text: t('nav.projects'), icon: <IoCodeSlashOutline /> },
-  { id: 'blog', text: t('nav.blog'), icon: <IoNewspaperOutline /> },
-  { id: 'contact', text: t('nav.contact'), icon: <IoMailOutline /> },
-], [t]);
+  const navLinks = React.useMemo(() => [
+    { id: 'home',
+      text: t('nav.home'), 
+      icon: <IoHomeOutline /> },
+    { id: 'about',
+      text: t('nav.about'),
+      icon: <IoPersonOutline /> },    
+    { id: 'projects',
+      text: t('nav.projects'),
+      icon: <IoCodeSlashOutline /> },
+    { id: 'experience',
+      text: t('nav.experience'),
+      icon: <IoBriefcaseOutline /> },
+    { id: 'blog',
+      text: t('nav.blog'),
+      icon: <IoNewspaperOutline /> },
+    { id: 'contact',
+      text: t('nav.contact'),
+      icon: <IoMailOutline /> },
+  ], [t]);
 
   const scrollToSection = (id) => {
     const performScroll = () => {
@@ -58,7 +74,7 @@ const navLinks = React.useMemo(() => [
 
     if (isOpen) setIsOpen(false);
   };
-
+  
   useEffect(() => {
     const handleScroll = () => {
       const scrollPos = window.scrollY + window.innerHeight / 2;
@@ -75,7 +91,7 @@ const navLinks = React.useMemo(() => [
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [navLinks]);
-
+  
   return (
     <nav className="navbar">
       <div className="navbar-container">

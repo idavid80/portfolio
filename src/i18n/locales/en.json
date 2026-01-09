@@ -2,6 +2,7 @@
   "nav": {
     "home": "Home",
     "about": "About",
+    "experience": "Experience",
     "projects": "Projects",
     "blog": "Blog",
     "contact": "Contact"
@@ -87,5 +88,37 @@
       "min": "Message must be at least 10 characters long",
       "max": "Message cannot exceed 500 characters"
     }
+  },
+    "experience": {
+    "title": "Experience",
+    "filter_all": "All",
+    "filter_research": "Research",
+    "filter_dev": "Dev",
+    "filter_cloud": "Cloud",
+    "more_info": "More info",
+    "work_history": {
+
+      "rovimatica": {
+        "title": "R&D&I Department",
+        "company": "Rovimatica S.L.",
+        "date": "March 2024 - June 2024",
+        "desc": "Research and implementation on gRPC and RESTful connections, ORY authentication system (Kratos, Hydra and Keto). Movement and object detection through computer vision (OpenCV and YOLOv8).",
+        "more": "My experience in Rovimática's R&D&I department was divided into two main areas: the consolidation of modern communication infrastructures and the exploration of visual intelligence technologies. In the field of software development, my main challenge was to optimise communication between mobile devices and servers. I migrated traditional workflows to gRPC, reducing latency between the app (Flutter) and the backend (Django/Node). I also raised the security standard by integrating the ORY suite. To achieve seamless integration, I programmed a critical component: middleware in Golang that acted as a security bridge, managing complex authentications transparently for the end user. During my last few weeks, I explored the capabilities of OpenCV and YOLOv8. I created a library of proof-of-concept scripts that included: Inspection Systems: Tools capable of defining manual ROIs (Regions of Interest) to calculate areas and detect defects or blemishes on surfaces. Pattern Recognition: Algorithms capable of classifying geometric shapes in real-time video and separating colour channels (RGB/HSV) for spectral analysis. Intelligent Tracking: Systems for tracking specific moving objects, filtering out environmental noise and variable lighting conditions."
+      },
+      "status": {
+        "title": "Project STATUS",
+        "company": "University of Seville",
+        "date": "March 2025 - August 2024",
+        "desc": "Multi-domain compliance management system based on mashups (STATUS)",
+        "more": "My role in the STATUS project focused on strengthening system reliability and security infrastructure.\n\n1. Software Quality Assurance: I engineered a comprehensive suite of unit and integration tests for the backend using Vitest. This initiative significantly improved code coverage and ensured the stability of critical business logic against regressions.\n\n2. Advanced Security: I implemented a complete Two-Factor Authentication (2FA) system, ensuring seamless integration between the React frontend and backend security layers. Furthermore, I fortified the application's data protection by deploying a Secrets Manager, centralizing sensitive credentials and enforcing best practices in environment variable management."
+      },
+      "perseo": {
+        "title": "Project PERSEO",
+        "company": "University of Seville",
+        "date": "Jan 2026 - Present",
+        "desc": "Operation and continuous improvement of digital service processes through bot-human collaboration.",
+        "more": "Implementation of proof-of-concept tests, prototypes and software tools related to the following work packages of the PERSEO project: WP1: Bot development platform, WP3: Process management and productivity applied to SE, WP4: Automated operation support of KIPs and WP5: Continuous improvement of process and people performance"
+      }
     }
+  }
 }

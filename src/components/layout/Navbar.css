@@ -77,27 +77,34 @@
   color: hsl(210, 10%, 70%);
 }
 
-.nav-item:hover,
-.nav-item:focus {
+.nav-item:hover {
   background-color: rgba(0, 0, 0, 0.05);
   color: hsl(210, 70%, 40%);
 }
-
-.dark .nav-item:hover,
-.dark .nav-item:focus {
-  background-color: rgba(255, 255, 255, 0.05);
-  color: hsl(180, 70%, 50%);
-}
-
 .nav-item.active {
+  background-color: rgba(0, 0, 0, 0.05); 
   color: hsl(210, 70%, 40%);
   font-weight: bold;
 }
 
-.dark .nav-item.active {
+.nav-item:focus {
+  outline: none;      
+  background: transparent;
+}
+
+.dark .nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
   color: hsl(180, 70%, 50%);
 }
 
+.dark .nav-item.active {
+  background-color: rgba(255, 255, 255, 0.05); /* Fondo para el activo en dark */
+  color: hsl(180, 70%, 50%);
+}
+
+.dark .nav-item:focus {
+  background: transparent;
+}
 /* ========================================
    Controles (lenguaje, tema, menú)
    ======================================== */

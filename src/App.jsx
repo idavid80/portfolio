@@ -10,6 +10,7 @@ import BlogPost from './pages/BlogPost';
 import Contact from './pages/Contact';
 import './App.css';
 import BlogMain from "./components/blog/BlogMain";
+import Experience from "./pages/Experience";
 
 // Componente que contiene todas las secciones principales desplazables
 function OnePageSections() {
@@ -19,6 +20,7 @@ function OnePageSections() {
       <Home id="home" />
       <About id="about" />
       <Projects id="projects" />
+      <Experience id="experience" />
       <Blog id="blog" /> {/* ID para la sección de lista de blog */}
       <Contact id="contact" />
     </>
