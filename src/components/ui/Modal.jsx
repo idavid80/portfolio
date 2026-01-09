@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "../../contexts/ThemeContext";
-import "./Modal.css";
+import "./styles/Modal.css";
 
 export default function Modal({ isOpen, onClose, title, children }) {
   const { theme } = useTheme();

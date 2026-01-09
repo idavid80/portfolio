@@ -3,19 +3,11 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import "./styles/About.css";
 import {
-  SiReact,
-  SiNodedotjs,
-  SiPython,
-  SiTensorflow,
-  SiDocker,
-  SiPostgresql,
-  SiMongodb,
-  SiAmazon,
-  SiKubernetes,
-  SiGit,
-  SiPandas,
-  SiScikitlearn,
+  SiReact, SiNodedotjs, SiPython, SiTensorflow, SiDocker,
+  SiPostgresql, SiMongodb, SiAmazon, SiKubernetes, SiGit,
+  SiPandas, SiScikitlearn,
 } from "react-icons/si";
+
 const techStack = [
   { name: "React", icon: <SiReact />, color: "#61DAFB" },
   { name: "Node.js", icon: <SiNodedotjs />, color: "#339933" },
@@ -30,54 +22,68 @@ const techStack = [
   { name: "Pandas", icon: <SiPandas />, color: "#150458" },
   { name: "Scikit-learn", icon: <SiScikitlearn />, color: "#F7931E" },
 ];
+import { 
+  containerVariants, 
+  itemVariants, 
+  titleVariants, 
+  viewportConfig 
+} from "../utils/motion";
 
 export default function About({ id }) {
   const { t } = useTranslation();
 
   return (
     <section id={id} className="about">
+      {/* Decoración de fondo flotante (Opcional para dar profundidad) */}
+      <motion.div 
+        className="background-circle circle-1"
+        animate={{ y: [0, -20, 0], opacity: [0.3, 0.6, 0.3] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div 
+        className="background-circle circle-2"
+        animate={{ y: [0, 20, 0], x: [0, 10, 0], opacity: [0.3, 0.5, 0.3] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+      />
+
       <div className="about-container">
         {/* Título */}
         <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          variants={titleVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
           className="about-title"
         >
           {t("about.title")}
         </motion.h2>
 
-        {/* Biografía */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="bio"
-        >
-          {t("about.bio")}
-        </motion.p>
-
-        {/* Skills */}
-        <motion.h3
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="skills-title"
-        >
-          {t("about.skills_title")}
-        </motion.h3>
-
+        {/* Bio */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
+          variants={titleVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+          className="bio-wrapper"
+        >
+          <p className="bio">{t("about.bio")}</p>
+        </motion.div>
+
+        {/* Grid de Tecnologías */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
           className="tech-grid"
         >
           {techStack.map((tech) => (
             <motion.div
               key={tech.name}
-              whileHover={{ scale: 1.05 }}
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, rotate: 2 }} 
               className="tech-card"
+              style={{ borderTop: `4px solid ${tech.color}` }}
             >
               <span className="tech-icon" style={{ color: tech.color }}>
                 {tech.icon}

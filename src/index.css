@@ -1,69 +1,73 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/*
+ * ========================================
+ * VARIABLES GLOBALES (THEMING)
+ * ========================================
+ */
+:root {
+  /* --- MODO CLARO (Default) --- */
+  
+  /* Colores Base */
+  --bg-body: hsl(0, 0%, 98%);     /* #FAFAFA */
+  --text-body: hsl(210, 15%, 15%); /* #24272B */
+  
+  /* Color de Acento (Primary) */
+  --primary: hsl(210, 70%, 45%);   /* Azul marino #2D72B8 */
+  --primary-text-contrast: #ffffff; /* Texto sobre el botón primario */
+}
 
+/* --- MODO OSCURO (Sobreescritura) --- */
+.dark {
+  /* Colores Base */
+  --bg-body: hsl(222, 47%, 11%); 
+  --text-body: hsl(210, 20%, 95%); /* #F0F3F5 */
+  
+  /* Color de Acento */
+  --primary: hsl(180, 70%, 50%);   /* #40E0D0 */
+  --primary-text-contrast: hsl(210, 15%, 15%);
+}
 
 /*
  * ========================================
- * Estilos para el Modo Claro
+ * ESTILOS BASE
  * ========================================
  */
 
 body {
   margin: 0;
   padding: 0;
-   /* background-color: hsl(0, 0%, 98%);#FAFAFA */
-  color: hsl(210, 15%, 15%); /* #24272B */
-  background-color: transparent;
-  
+  background-color: var(--bg-body); 
+  color: var(--text-body);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Enlaces y Botones globales */
 a,
 button {
-  /* Nuevo color de acento para el modo claro: Azul marino */
-  color: hsl(210, 70%, 45%); /* Hex: #2D72B8 */
-}
-
-button {
-  background-color: transparent;
-  border: 2px solid hsl(210, 70%, 45%); /* Borde azul marino */
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
+  color: var(--primary);
   transition: all 0.3s ease;
-}
-
-button:hover {
-  background-color: hsl(210, 70%, 45%); /* Fondo azul marino en hover */
-  color: #fff; /* Texto blanco en hover */
 }
 
 /*
  * ========================================
- * Estilos para el Modo Oscuro
+ * BOTONES GLOBALES
  * ========================================
  */
-.dark body {
-  color: hsl(210, 20%, 95%); /* #F0F3F5 */
+
+button {
   background-color: transparent;
+  border: 2px solid var(--primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-.dark a,
-.dark button {
-  /* Color de acento para el modo oscuro: Azul turquesa */
-  color: hsl(180, 70%, 50%); /* Hex: #40E0D0 */
+button:hover {
+  background-color: var(--primary);
+  color: var(--primary-text-contrast); /* Se adapta automáticamente según el modo */
 }
 
-.dark button {
-  border-color: hsl(180, 70%, 50%); /* Borde turquesa */
-}
-
-.dark button:hover {
-  background-color: hsl(180, 70%, 50%); /* Fondo turquesa en hover */
-  color: hsl(210, 15%, 15%); /* Texto oscuro en hover */
-}
-
+/* Utilidad para transiciones */
 .transition-max-h {
   transition: max-height 0.3s ease-in-out;
 }

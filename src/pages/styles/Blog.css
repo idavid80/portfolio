@@ -1,145 +1,194 @@
+/* =====================================================
+   CONFIGURACIÓN DE VARIABLES (THEMING)
+   ===================================================== */
+.blog {
+  /* --- MODO CLARO --- */
+  --blog-bg-gradient: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  --blog-text-primary: #1f2937;
+  --blog-text-secondary: #4b5563;
+  
+  --blog-accent: #8b5cf6; 
+  --blog-accent-hover: #7c3aed;
+
+  /* Variables para el GlassCard en MODO CLARO */
+  --card-bg: #ffffff; 
+  --card-border: rgba(0, 0, 0, 0.05);
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.dark .blog {
+  /* --- MODO OSCURO --- */
+  --blog-bg-gradient: linear-gradient(135deg, #111827, #1f2937);
+  
+  /* 1. Texto Claro para fondo oscuro */
+  --blog-text-primary: #f9fafb;  /* Blanco casi puro */
+  --blog-text-secondary: #d1d5db; /* Gris claro */
+  
+  --blog-accent: #a78bfa;
+  --blog-accent-hover: #c4b5fd;
+
+  /* 2. Variables para GlassCard en MODO OSCURO */
+  --card-bg: rgba(30, 41, 59, 0.6); 
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* =====================================================
+   ESTRUCTURA BASE DE LA SECCIÓN
+   ===================================================== */
 .blog {
   width: 100%;
-  min-height: 100vh; /* altura completa */
+  min-height: 100vh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  justify-content: center;
+  padding: 5rem 2rem;
+
+  background: var(--blog-bg-gradient);
+  color: var(--blog-text-primary);
+  
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.blog-container {
+  max-width: 1200px;
+  width: 100%;
 }
 
 .blog-title {
   font-size: clamp(2rem, 6vw, 3rem);
   font-weight: 700;
   text-align: center;
-  margin-bottom: 2rem;
-  color: #1f2937;
+  margin-bottom: 3rem;
+  color: var(--blog-text-primary);
 }
 
+/* Mensaje cuando no hay posts */
 .no-posts {
   text-align: center;
-  color: #6b7280;
-  font-size: 1rem;
+  color: var(--blog-text-secondary);
+  font-size: 1.1rem;
+  padding: 2rem;
+  background: rgba(0,0,0,0.03);
+  border-radius: 1rem;
 }
 
+/* =====================================================
+   GRID
+   ===================================================== */
 .blog-grid {
   display: grid;
   gap: 2rem;
   width: 100%;
-  max-width: 1200px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
-.blog-card {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+/* =====================================================
+   ESTILOS DE BLOG CARD (Elementos internos)
+   ===================================================== */
+
+/* 1. BADGE DE FECHA (Overlay sobre la imagen) */
+.blog-date-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  padding: 0.35rem 0.85rem;
+  border-radius: 99px;
+  
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 10;
 }
 
-.blog-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
-
-.blog-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.blog-content {
-  padding: 1rem 1.25rem;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
+/* 2. TÍTULO DEL POST */
 .blog-post-title {
   font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #111827;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+  color: var(--blog-text-primary);
+  
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
+/* 3. RESUMEN (Excerpt) */
 .blog-excerpt {
   font-size: 0.95rem;
-  color: #4b5563;
-  flex: 1;
+  color: var(--blog-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  
+  flex-grow: 1; 
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.blog-date {
-  font-size: 0.75rem;
-  color: #9ca3af;
-  margin-top: 0.5rem;
+/* 4. FOOTER (Separador y Botón) */
+.blog-footer {
+  margin-top: auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 1.25rem;
 }
 
+/* Ajuste del borde en modo oscuro */
+.dark .blog-footer {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 5. ENLACE "LEER MÁS" */
 .blog-readmore {
-  margin-top: 1rem;
-  font-size: 0.875rem;
-  color: #3b82f6;
-  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--blog-accent);
   text-decoration: none;
-  transition: color 0.2s;
+  
+  transition: all 0.2s ease;
 }
 
 .blog-readmore:hover {
-  color: #2563eb;
-  text-decoration: underline;
+  color: var(--blog-accent-hover);
+  gap: 0.75rem;
 }
 
-/* 🌙 Versión modo oscuro */
-.dark .blog {
-  background: linear-gradient(135deg, #111827, #1f2937);
+.blog-readmore .btn-icon {
+  font-size: 0.85rem;
+  transition: transform 0.2s ease;
 }
 
-.dark .blog-title {
-  color: #f9fafb;
+.blog-readmore:hover .btn-icon {
+  transform: translateX(2px);
 }
 
-.dark .no-posts {
-  color: #9ca3af;
-}
-
-.dark .blog-card {
-  background-color: #1f2937;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-
-.dark .blog-card:hover {
-  box-shadow: 0 15px 30px rgba(0,0,0,0.6);
-}
-
-.dark .blog-post-title {
-  color: #f3f4f6;
-}
-
-.dark .blog-excerpt {
-  color: #d1d5db;
-}
-
-.dark .blog-date {
-  color: #9ca3af;
-}
-
-.dark .blog-readmore {
-  color: #60a5fa;
-}
-
-.dark .blog-readmore:hover {
-  color: #3b82f6;
-}
-
-/* Responsive */
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
 @media (max-width: 768px) {
   .blog {
     padding: 3rem 1.5rem;
   }
-
-  .blog-image {
-    height: 180px;
-  }
+  .glass-card-image-container { 
+    height: 180px; 
+  } 
 }

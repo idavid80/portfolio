@@ -1,8 +1,34 @@
 /* =====================================================
-   ABOUT SECTION
+   CONFIGURACIÓN DE VARIABLES (THEMING)
    ===================================================== */
 
 .about {
+  /* --- 1. Definimos los valores por defecto (LIGHT MODE) --- */
+  
+  /* Fondos y Textos */
+  --about-bg-gradient: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  --about-text-primary: #111827;
+  --about-text-secondary: rgba(17, 24, 39, 0.85); /* Opacidad sobre el primario */
+
+  /* Decoración (Blobs) */
+  --blob-color-1: rgba(59, 130, 246, 0.15); /* Azul */
+  --blob-color-2: rgba(6, 182, 212, 0.1);  /* Cyan */
+
+  /* Tech Cards (Glassmorphism) */
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --card-border: rgba(255, 255, 255, 0.4);
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --card-shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.14);
+  
+  /* Skills underline */
+  --underline-gradient: linear-gradient(90deg, #3b82f6, #06b6d4);
+
+  /* Legacy Skills Chips */
+  --chip-bg: rgba(0, 0, 0, 0.05);
+  --chip-text: #1f2937;
+  --chip-bg-hover: rgba(0, 0, 0, 0.12);
+
+  /* --- Estilos Base de la Sección --- */
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -11,25 +37,77 @@
   box-sizing: border-box;
   padding: 4rem 2rem;
 
-  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
-  color: #111827;
+  position: relative;
+  overflow: hidden;
 
+  /* Aplicación de Variables */
+  background: var(--about-bg-gradient);
+  color: var(--about-text-primary);
+  
   transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* --- 2. Sobrescribimos valores para DARK MODE --- */
+.dark .about {
+  /* Fondos y Textos */
+  --about-bg-gradient: linear-gradient(135deg, #0f172a, #020617);
+  --about-text-primary: #f8fafc;
+  --about-text-secondary: rgba(248, 250, 252, 0.85);
+
+  /* Decoración (Más sutil en dark) */
+  --blob-color-1: rgba(59, 130, 246, 0.08);
+  --blob-color-2: rgba(6, 182, 212, 0.05);
+
+  /* Tech Cards */
+  --card-bg: rgba(19, 28, 48, 0.85);
+  --card-border: rgba(255, 255, 255, 0.05);
+  --card-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+  --card-shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.8);
+
+  /* Legacy Skills Chips */
+  --chip-bg: rgba(255, 255, 255, 0.12);
+  --chip-text: #e2e8f0;
+  --chip-bg-hover: rgba(255, 255, 255, 0.2);
+}
+
 /* =====================================================
-   CONTAINER
+   BACKGROUND DECORATION (Blobs)
+   ===================================================== */
+.background-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.circle-1 {
+  width: 300px;
+  height: 300px;
+  background: var(--blob-color-1); /* Variable */
+  top: -50px;
+  left: -100px;
+}
+
+.circle-2 {
+  width: 400px;
+  height: 400px;
+  background: var(--blob-color-2); /* Variable */
+  bottom: -100px;
+  right: -100px;
+}
+
+/* =====================================================
+   LAYOUT & TYPOGRAPHY
    ===================================================== */
 
 .about-container {
   max-width: 1200px;
   width: 100%;
   text-align: center;
+  position: relative; 
+  z-index: 1; /* Asegura que el contenido esté sobre los blobs */
 }
-
-/* =====================================================
-   TITLE
-   ===================================================== */
 
 .about-title {
   font-size: clamp(2rem, 5vw, 3rem);
@@ -37,20 +115,16 @@
   margin-bottom: 1.5rem;
 }
 
-/* =====================================================
-   BIO
-   ===================================================== */
-
 .bio {
   font-size: clamp(1rem, 2vw, 1.25rem);
   line-height: 1.7;
   max-width: 820px;
   margin: 0 auto 2.5rem;
-  opacity: 0.9;
+  color: var(--about-text-secondary); /* Variable para opacidad */
 }
 
 /* =====================================================
-   SKILLS TITLE
+   SKILLS SECTION
    ===================================================== */
 
 .skills-title {
@@ -67,12 +141,61 @@
   width: 64px;
   height: 4px;
   margin: 0.75rem auto 0;
-  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  background: var(--underline-gradient);
   border-radius: 999px;
 }
 
 /* =====================================================
-   LEGACY SKILL CHIPS (optional)
+   TECH GRID & CARDS
+   ===================================================== */
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.tech-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1.5rem 1rem; 
+  position: relative;
+  z-index: 1;
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+
+  /* Variables */
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+
+  /* Framer Motion maneja transform, pero CSS maneja shadow y color */
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.tech-card:hover {
+  box-shadow: var(--card-shadow-hover);
+}
+
+.tech-icon {
+  font-size: 2.6rem;
+  margin-bottom: 0.5rem;
+  /* La animación de escala la hace Framer Motion (whileHover) */
+}
+
+.tech-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  opacity: 0.85; /* Hereda el color del padre, solo baja opacidad */
+}
+
+/* =====================================================
+   LEGACY SKILL CHIPS (Optional)
    ===================================================== */
 
 .card-skills {
@@ -84,113 +207,18 @@
 }
 
 .skills {
-  background: rgba(0, 0, 0, 0.05);
-  color: #1f2937;
+  background: var(--chip-bg);
+  color: var(--chip-text);
   padding: 0.5rem 1rem;
   border-radius: 999px;
   font-size: 0.95rem;
   backdrop-filter: blur(4px);
-
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .skills:hover {
-  background: rgba(0, 0, 0, 0.12);
+  background: var(--chip-bg-hover);
   transform: scale(1.05);
-}
-
-/* =====================================================
-   TECH STACK GRID (icons)
-   ===================================================== */
-
-.tech-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-/* =====================================================
-   TECH CARD
-   ===================================================== */
-
-.tech-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  padding: 1.25rem 1rem;
-  border-radius: 14px;
-
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(8px);
-
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.tech-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.14);
-}
-
-/* =====================================================
-   TECH ICON
-   ===================================================== */
-
-.tech-icon {
-  font-size: 2.6rem;
-  margin-bottom: 0.5rem;
-
-  transition: transform 0.2s ease;
-}
-
-.tech-card:hover .tech-icon {
-  transform: scale(1.12);
-}
-
-/* =====================================================
-   TECH NAME
-   ===================================================== */
-
-.tech-name {
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-align: center;
-  opacity: 0.85;
-}
-
-/* =====================================================
-   DARK MODE
-   ===================================================== */
-
-.dark .about {
-  background: linear-gradient(135deg, #0f172a, #020617);
-  color: #f8fafc;
-}
-
-.dark .bio {
-  opacity: 0.85;
-}
-
-.dark .skills {
-  background: rgba(255, 255, 255, 0.12);
-  color: #e2e8f0;
-}
-
-.dark .skills:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.dark .tech-card {
-  background: rgba(19, 28, 48, 0.85);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
-}
-
-.dark .tech-name {
-  opacity: 0.9;
 }
 
 /* =====================================================

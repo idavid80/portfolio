@@ -1,49 +1,87 @@
+/* =====================================================
+   CONFIGURACIÓN DE VARIABLES (THEMING)
+   ===================================================== */
 .contact {
+  /* --- MODO CLARO (Tus colores originales) --- */
+  --cont-bg-gradient: linear-gradient(to right, #65f4cd 0%, #4799e9 100%);
+  --cont-text-primary: #182136;
+  --cont-text-secondary: #222a38;
+  
+  /* Ajuste para que la tarjeta de cristal (GlassCard) se vea bien sobre este fondo */
+  /* Hacemos la tarjeta un poco más blanca para dar contraste sobre el azul vibrante */
+  --card-bg: rgba(255, 255, 255, 0.25); 
+  --card-border: rgba(255, 255, 255, 0.4);
+
+  /* --- ESTRUCTURA BASE --- */
   width: 100%;
   min-height: 100vh;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, #65f4cd 0%, #4799e9 100%);
-  /*background: linear-gradient(to right, #191654 0%, #43c6ac 100%);*/
+  align-items: center;
+  box-sizing: border-box;
+  padding: 4rem 1.5rem; /* Un poco de aire en móviles */
+
+  background: var(--cont-bg-gradient);
+  color: var(--cont-text-primary);
   text-align: center;
-  color: #182136;
+  
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-.contact-container {
-  max-width: 900px;
-  width: 90%;
-  margin: 0 auto;
+/* --- MODO OSCURO (Tus colores originales) --- */
+.dark .contact {
+  --cont-bg-gradient: linear-gradient(to right, #191654 0%, #43c6ac 100%);
+  --cont-text-primary: #ffffff;
+  --cont-text-secondary: #f3f4f6;
+
+  /* Ajuste GlassCard para fondo oscuro */
+  --card-bg: rgba(0, 0, 0, 0.3);
+  --card-border: rgba(255, 255, 255, 0.1);
 }
 
-/* Título y subtítulo */
+/* =====================================================
+   LAYOUT & TYPOGRAPHY
+   ===================================================== */
+.contact-container {
+  max-width: 900px; /* Tu ancho original */
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .contact-title {
-  font-size: clamp(2rem, 6vw, 3rem);
+  font-size: clamp(2rem, 6vw, 3rem); /* Tu tipografía responsive */
   font-weight: 700;
   margin-bottom: 0.5rem;
+  /* Opcional: Sombra de texto sutil para leer mejor sobre el degradado */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1); 
 }
 
 .contact-subtitle {
   font-size: clamp(1rem, 3vw, 1.25rem);
-  margin-bottom: 2rem;
-  color: #222a38;
+  margin-bottom: 3rem;
+  color: var(--cont-text-secondary);
+  max-width: 600px; /* Para que el texto no sea eterno en pantallas anchas */
+  line-height: 1.6;
 }
 
-/* Modo oscuro */
-.dark .contact {
-  background: linear-gradient(to right, #191654 0%, #43c6ac 100%);
-  color: white;
-}
-.dark .contact-subtitle {
-  color: #f3f4f6;
+/* =====================================================
+   AJUSTE DE FORMULARIO
+   ===================================================== */
+/* Esto asegura que la tarjeta GlassCard tenga un margen superior adecuado */
+.contact-form-wrapper {
+  width: 100%;
+  max-width: 600px; /* Ancho ideal para formularios */
 }
 
-/* Responsive */
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
 @media (max-width: 768px) {
   .contact {
-    padding: 1.5rem;
+    padding: 3rem 1.5rem;
   }
 }

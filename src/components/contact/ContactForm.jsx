@@ -1,11 +1,11 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { createContactSchema } from "../../schema/contact.schema";
-import "./styles/ContactForm.css";
 import FormStatus from "./FormStatus";
+import GlassCard from "../ui/GlassCard";
+import "./styles/ContactForm.css"; // Tu CSS adaptado
 
 export default function ContactForm() {
   const { t } = useTranslation();
@@ -41,7 +41,6 @@ export default function ContactForm() {
     }
   };
 
-  // Ocultar mensaje después de 3 segundos
   React.useEffect(() => {
     if (!status) return;
     const timer = setTimeout(() => setStatus(null), 3000);
@@ -49,47 +48,49 @@ export default function ContactForm() {
   }, [status]);
 
   return (
-    <>
-      <motion.form
-        onSubmit={handleSubmit(onSubmit)}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        className="contact-form"
-      >
-        <div>
+    /* Usamos GlassCard pero le añadimos tu clase específica para aplicar tus estilos */
+    <GlassCard className="contact-form-glass">
+      <form onSubmit={handleSubmit(onSubmit)} className="contact-form-content">
+        
+        {/* Wrapper del input (necesario para tu CSS de centrado) */}
+        <div className="input-wrapper">
           <input
             type="text"
             placeholder={t("contact.name")}
+            className={errors.name ? "input-error-border" : ""}
             {...register("name")}
           />
           {errors.name && <span className="error-text">{errors.name.message}</span>}
         </div>
 
-        <div>
+        <div className="input-wrapper">
           <input
             type="email"
             placeholder={t("contact.email")}
+            className={errors.email ? "input-error-border" : ""}
             {...register("email")}
           />
           {errors.email && <span className="error-text">{errors.email.message}</span>}
         </div>
 
-        <div>
+        <div className="input-wrapper">
           <textarea
             placeholder={t("contact.message")}
             rows="5"
+            className={errors.message ? "input-error-border" : ""}
             {...register("message")}
           />
           {errors.message && <span className="error-text">{errors.message.message}</span>}
         </div>
-       <div className="btn-contain">
-        <button type="submit" disabled={isSubmitting}>
-          {t("contact.send")}
-        </button>
+
+        <div className="btn-contain">
+          <button type="submit" disabled={isSubmitting}>
+            {isSubmitting ? t("contact.sending") : t("contact.send")}
+          </button>
         </div>
-      </motion.form>
+      </form>
+      
       <FormStatus status={status} onClose={() => setStatus(null)} />
-    </>
+    </GlassCard>
   );
 }
