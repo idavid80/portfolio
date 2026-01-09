@@ -47,6 +47,7 @@ const ProjectCard = ({ project, t, onInfoClick, ...props}) => {
             className="project-btn info"
           >
             <FiInfo className="btn-icon" />
+            <span>{t("projects.more_info")}</span>
           </button>
         )}
       </div>

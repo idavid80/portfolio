@@ -24,15 +24,10 @@ export default function Projects({ id }) {
     { key: "Big Data", label: t("projects.filter_bigdata") },
   ];
 
-  // 1. PRIMERO: Definimos la lógica de filtrado
   const filteredProjects =
     filter === "All"
       ? projectsData
       : projectsData.filter((p) => p.category === filter);
-
-  // 2. SEGUNDO: Ahora sí podemos hacer debug porque la variable ya existe
-  console.log("Filtro actual:", filter);
-  console.log("Proyectos filtrados:", filteredProjects);
 
   return (
     <section id={id} className="projects">
