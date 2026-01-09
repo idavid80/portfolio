@@ -1,20 +1,89 @@
+/* =====================================================
+   1. CONFIGURACIÓN DE VARIABLES (THEMING)
+   ===================================================== */
+.experience {
+  /* --- MODO CLARO (Default) --- */
+  --exp-bg-gradient: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  --exp-text-primary: #111827;
+  --exp-text-secondary: #4b5563;
+  --exp-accent: #3b82f6; /* Azul */
+
+  /* Variables para GlassCard (LIGHT) */
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.05);
+  --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  --card-shadow-hover: 0 12px 25px rgba(0, 0, 0, 0.1);
+
+  /* Filtros */
+  --filter-bg: rgba(0, 0, 0, 0.1);
+  --filter-text: #111827;
+  --filter-bg-hover: rgba(0, 0, 0, 0.2);
+  --filter-active-bg: #3b82f6;
+  --filter-active-text: #ffffff;
+
+  /* Chips de tecnología */
+  --tech-bg: #dadde2;
+  --tech-text: #374151;
+  --tech-border: #e5e7eb;
+
+  /* Botón */
+  --btn-bg: #374151;
+  --btn-text: #ffffff;
+  --btn-hover: #3b82f6;
+}
+
+.dark .experience {
+  /* --- MODO OSCURO --- */
+  --exp-bg-gradient: linear-gradient(135deg, #0f172a, #1e293b);
+  --exp-text-primary: #ffffff;
+  --exp-text-secondary: #d1d5db;
+  --exp-accent: #2dd1be; /* Teal/Turquesa */
+
+  /* Variables para GlassCard (DARK) */
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  --card-shadow-hover: 0 12px 25px rgba(0, 0, 0, 0.7);
+
+  /* Filtros Dark */
+  --filter-bg: rgba(255, 255, 255, 0.1);
+  --filter-text: #ffffff;
+  --filter-bg-hover: rgba(255, 255, 255, 0.2);
+  --filter-active-bg: #14b8a6; /* Teal */
+
+  /* Chips Dark */
+  --tech-bg: #374151;
+  --tech-text: #d1d5db;
+  --tech-border: #4b5563;
+
+  /* Botón Dark */
+  --btn-bg: #374151; /* Gris oscuro base */
+  --btn-text: #ffffff;
+  --btn-hover: #14b8a6; /* Teal al hover */
+}
+
+/* =====================================================
+   2. ESTRUCTURA BASE
+   ===================================================== */
 .experience {
   width: 100%;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #f3f4f6, #e5e7eb); /* light mode */
-  color: #111827;
-  }
+  padding: 5rem 2rem;
+  box-sizing: border-box;
 
-.dark .experience {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: white;
+  background: var(--exp-bg-gradient);
+  color: var(--exp-text-primary);
+  
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .experience-container {
   max-width: 1280px;
-  width: 80%;
+  width: 100%;
   text-align: center;
   margin-bottom: 2rem;
 }
@@ -25,114 +94,115 @@
   margin-bottom: 2rem;
 }
 
+/* =====================================================
+   3. FILTROS
+   ===================================================== */
 .experience-filters {
   display: flex;
-  flex-wrap: wrap; /* Importante para móviles: permite que bajen de línea */
+  flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
   margin-bottom: 3rem;
 }
+
 .filter-btn {
+  position: relative;
   padding: 0.5rem 1.25rem;
   border-radius: 999px;
   font-weight: 600;
   font-size: 0.9rem;
   border: none;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.1);
-  color: #111827;
+  z-index: 1;
+
+  background-color: var(--filter-bg);
+  color: var(--filter-text);
   transition: all 0.2s ease;
 }
-.filter-btn.active {
-  background-color: #3b82f6;
-  color: white;
-  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
-}
+
 .filter-btn:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--filter-bg-hover);
 }
-.dark .filter-btn {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
+
+.filter-btn.active {
+  background-color: transparent; /* Framer Motion pone el fondo */
+  color: var(--filter-active-text);
+  /* Si no usas Framer Motion layoutId, usa esta línea: */
+  background-color: var(--filter-active-bg);
 }
-.dark .filter-btn:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+
+/* El fondo animado (Pastilla) */
+.filter-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background-color: var(--filter-active-bg);
+  z-index: -1;
 }
-.dark .filter-btn.active {
-  background-color: #14b8a6;  
-}
-/* GRID */
+
+/* =====================================================
+   4. GRID Y CARDS
+   ===================================================== */
 .experience-grid {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
- 
 }
 
-/* CARD */
-.experience-card {
-  display: flex;
-  flex-direction: column;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 1rem;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%; /* Para que todas tengan la misma altura */
-  position: relative;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-}
-
-.experience-image {
-  margin-top: 1rem;
+.experience-card-wrapper .glass-card-image-container {
   width: 100%;
-  height: 120px;
-  object-fit: contain;
+  height: 200px; /* Altura estándar igual que en el Blog */
+  position: relative;
+  overflow: hidden;
 }
 
-.experience-content {
-  padding: 1rem 1.25rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; /* Ocupa el espacio restante */
+/* 2. Definimos cómo se comporta la imagen dentro */
+.experience-card-wrapper .glass-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  
+  padding: 0 !important; 
+  background-color: transparent !important;
+  
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+/* Contenido Interno */
 .experience-title-card {
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
   line-height: 1.4;
+  color: var(--exp-text-primary);
 }
 
 .experience-company {
   font-size: 0.95rem;
-  opacity: 0.8;
+  opacity: 0.9;
   font-weight: 700;
   margin-bottom: 0.3rem;
-  color: #3b82f6;
-}
-.dark .experience-company {
-  color: #2dd1be;
+  display: block;
+  color: var(--exp-accent); /* Azul o Teal según modo */
 }
 
 .experience-date {
   font-size: 0.85rem;
-  color: #6b7280;
+  color: var(--exp-text-secondary);
   margin-bottom: 1rem;
   font-style: italic;
-}
-.dark .experience-date {
-  color: #9ca3af;
+  display: block;
 }
 
 .experience-desc {
   font-size: 0.95rem;
   line-height: 1.5;
-  color: #4b5563;
-  flex-grow: 1
+  color: var(--exp-text-secondary);
+  margin-bottom: 1.5rem;
+  flex-grow: 1; /* Alinea los botones al final */
 }
-.dark .experience-desc {
-  color: #d1d5db;
-}
+
+/* STACK */
 .experience-stack {
   display: flex;
   flex-wrap: wrap;
@@ -141,20 +211,18 @@
 }
 
 .experience-tech {
- font-size: 0.75rem;
+  font-size: 0.75rem;
   font-weight: 600;
   padding: 0.25rem 0.75rem;
   border-radius: 999px;
-  background: #dadde2;
-  color: #374151;
-  border: 1px solid #e5e7eb;
+  
+  /* Variables */
+  background: var(--tech-bg);
+  color: var(--tech-text);
+  border: 1px solid var(--tech-border);
 }
-.dark .experience-tech {
-  background: #374151;
-  color: #d1d5db;
-  border: 1px solid #4b5563;
-}
-/* --- BOTÓN --- */
+
+/* BOTÓN */
 .experience-btn {
   margin-top: auto;
   width: 100%;
@@ -169,22 +237,27 @@
   gap: 0.5rem;
   transition: all 0.2s ease;
   
-  /* Estilo por defecto (Light) */
-  background: #374151;
-  color: white;
+  background: var(--btn-bg);
+  color: var(--btn-text);
 }
 
 .experience-btn:hover {
-  background:  #3b82f6;
+  background: var(--btn-hover);
   transform: translateY(-2px);
+  color: #ffffff;
 }
 
-.dark .experience-btn {
-  background: #374151;
-  color: white;
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 768px) {
+  .experience {
+    padding: 3rem 1.5rem;
+  }
+  .glass-card-image-container {
+    height: 150px; /* Logos un poco más pequeños en móvil */
+  }
+  .experience-card-wrapper .glass-card-image-container {
+    height: 180px;
+  }
 }
-
-.dark .experience-btn:hover {
-  background: #14b8a6;
-}
-

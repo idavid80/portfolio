@@ -3,7 +3,7 @@ export const experienceData = [
     id: 1,
     category: "Development",
     translationKey: "rovimatica",
-    image: "https://media.licdn.com/dms/image/v2/D4D0BAQHw-X9HhIDWyQ/company-logo_200_200/B4DZmp028OHwAI-/0/1759490830834/rovimatica_logo?e=1769644800&v=beta&t=XTgWpzizQXJvNoX0oLqK7nzNtGu6gjthqg7CjejjSiM",
+    image: "https://media.licdn.com/dms/image/v2/D4D0BAQHw-X9HhIDWyQ/company-logo_200_200/B4DZmp028OHwAI-/0/1759490830834/rovimatica_logo?e=2147483647&v=beta&t=sEWLIUaefzvPuzek35bGJ5SJfDz_8MNYgCJQyKOXkAo",
     stack: [
       "Python",
       "Django",

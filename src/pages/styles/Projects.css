@@ -1,29 +1,103 @@
-/* ============================
-   MODO OSCURO (default)
-   ============================ */
+/* =====================================================
+   1. CONFIGURACIÓN DE VARIABLES (THEMING)
+   ===================================================== */
+.projects {
+  /* --- MODO CLARO (Por defecto) --- */
+  --proj-bg-gradient: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  --proj-text-primary: #1f2937;
+  --proj-text-secondary: rgba(31, 41, 55, 0.8);
+  
+  /* Filtros */
+  --filter-bg-idle: rgba(0, 0, 0, 0.05);
+  --filter-text-idle: #1f2937;
+  --filter-bg-hover: rgba(0, 0, 0, 0.1);
+  --filter-active-bg: #3b82f6;
+  --filter-active-text: #ffffff;
+
+  /* Variables para GlassCard (IMPORTANTE) */
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.05);
+  --card-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  --card-shadow-hover: 0 12px 25px rgba(0,0,0,0.15);
+
+  /* Chips de tecnología */
+  --tech-bg: rgba(0,0,0,0.05);
+  --tech-text: #1f2937;
+
+  /* Colores de Botones (Light) */
+  --btn-demo-bg: rgba(59, 130, 246, 0.1);
+  --btn-demo-text: #3b82f6;
+  --btn-code-bg: rgba(0, 0, 0, 0.05);
+  --btn-code-text: #1f2937;
+  --btn-info-bg: rgba(16, 185, 129, 0.1);
+  --btn-info-text: #10b981;
+}
+
+.dark .projects {
+  /* --- MODO OSCURO --- */
+  --proj-bg-gradient: linear-gradient(135deg, #0f172a, #1e293b);
+  --proj-text-primary: #ffffff;
+  --proj-text-secondary: rgba(255, 255, 255, 0.7);
+
+  /* Filtros */
+  --filter-bg-idle: rgba(255, 255, 255, 0.1);
+  --filter-text-idle: #ffffff;
+  --filter-bg-hover: rgba(255, 255, 255, 0.2);
+
+  /* Variables para GlassCard en Dark Mode */
+  --card-bg: rgba(255, 255, 255, 0.05); /* Cristal oscuro */
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  --card-shadow-hover: 0 12px 25px rgba(0,0,0,0.7);
+
+  /* Chips */
+  --tech-bg: rgba(255,255,255,0.1);
+  --tech-text: #f3f4f6;
+
+  /* Colores de Botones (Dark) */
+  --btn-demo-bg: rgba(59, 130, 246, 0.2);
+  --btn-demo-text: #60a5fa;
+  --btn-code-bg: rgba(255, 255, 255, 0.1);
+  --btn-code-text: #e5e7eb;
+  --btn-info-bg: rgba(20, 184, 166, 0.2);
+  --btn-info-text: #2dd4bf;
+}
+
+/* =====================================================
+   2. ESTRUCTURA BASE
+   ===================================================== */
 .projects {
   width: 100%;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Centrado horizontal del container */
   box-sizing: border-box;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: white;
+  padding: 5rem 2rem;
+
+  /* Usamos las variables */
+  background: var(--proj-bg-gradient);
+  color: var(--proj-text-primary);
+  
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .projects-container {
   max-width: 1280px;
   width: 100%;
-  text-align: center;
+  /* No uses text-align: center aquí si quieres que las cards tengan texto a la izquierda */
 }
 
 .projects-title {
+  text-align: center;
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
   margin-bottom: 2rem;
+  color: var(--proj-text-primary);
 }
 
-/* Filtros */
+/* =====================================================
+   3. FILTROS
+   ===================================================== */
 .projects-filters {
   display: flex;
   flex-wrap: wrap;
@@ -33,57 +107,51 @@
 }
 
 .filter-btn {
+  position: relative; /* Necesario para la animación del fondo */
   padding: 0.5rem 1.25rem;
   border-radius: 999px;
   font-weight: 600;
   font-size: 0.9rem;
   border: none;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
+  z-index: 1;
+  
+  background-color: var(--filter-bg-idle);
+  color: var(--filter-text-idle);
   transition: all 0.2s ease;
 }
 
-.filter-btn.active {
-  background-color: #3b82f6;
-  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
-}
-
 .filter-btn:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--filter-bg-hover);
 }
 
-/* Grid de proyectos */
+.filter-btn.active {
+  background-color: transparent; /* El fondo lo pone Framer Motion (layoutId) */
+  color: var(--filter-active-text);
+}
+
+/* El fondo animado de Framer Motion */
+.filter-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background-color: var(--filter-active-bg);
+  z-index: -1;
+}
+
+/* =====================================================
+   4. GRID
+   ===================================================== */
 .projects-grid {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
-/* Tarjeta individual */
-.project-card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.5);
-}
-
-.project-image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
+/* Estilos internos de la tarjeta */
 .project-content {
-  padding: 1rem 1.25rem;
+  /* GlassCard añade padding, pero si necesitas ajustar: */
+  /* padding: 1rem; */
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -93,36 +161,42 @@
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  color: var(--proj-text-primary);
 }
 
 .project-desc {
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.8);
-  flex: 1;
+  color: var(--proj-text-secondary);
+  flex: 1; /* Empuja el footer hacia abajo */
+  line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
+/* STACK */
 .project-stack {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin: 0.75rem 0;
+  margin-bottom: 1.25rem;
 }
 
 .project-tech {
   font-size: 0.75rem;
-  padding: 0.25rem 0.5rem;
-  background: rgba(255,255,255,0.1);
+  padding: 0.25rem 0.6rem;
   border-radius: 999px;
+  font-weight: 500;
+  background: var(--tech-bg);
+  color: var(--tech-text);
 }
 
-/* ============================
-   BOTONES
-   ============================ */
+/* =====================================================
+   5. BOTONES
+   ===================================================== */
 .project-links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 0.5rem;
+  margin-top: auto; /* Se asegura de estar al final */
 }
 
 .project-btn {
@@ -142,139 +216,48 @@
 
 .project-btn .btn-icon {
   font-size: 1.1rem;
-  display: flex;
-  align-items: center;
 }
 
-/* ===== MODO OSCURO ===== */
-.dark .project-btn.demo {
-  background-color: rgba(59, 130, 246, 0.2);
-  color: #3b82f6;
+/* Demo Button */
+.project-btn.demo {
+  background-color: var(--btn-demo-bg);
+  color: var(--btn-demo-text);
 }
-
-.dark .project-btn.code {
-  background-color: #374151;
-  color: #f0f0f0;
-}
-
-.dark .project-btn.info {
-  background-color: #0f766e;
-  color: #14b8a6;
-}
-
-/* Hover dark mode */
-.dark .project-btn.demo:hover {
+.project-btn.demo:hover {
   background-color: #3b82f6;
   color: white;
 }
 
-.dark .project-btn.demo:hover .btn-icon {
+/* Code Button */
+.project-btn.code {
+  background-color: var(--btn-code-bg);
+  color: var(--btn-code-text);
+}
+.project-btn.code:hover {
+  background-color: var(--proj-text-primary);
+  color: var(--card-bg); /* Invierte colores */
+}
+
+/* Info Button */
+.project-btn.info {
+  background-color: var(--btn-info-bg);
+  color: var(--btn-info-text);
+}
+.project-btn.info:hover {
+  background-color: #10b981; /* Verde sólido */
   color: white;
 }
 
-.dark .project-btn.code:hover {
-  background-color: #0d1218;
-  color: white;
-}
-
-.dark .project-btn.code:hover .btn-icon {
-  color: white;
-}
-
-.dark .project-btn.info:hover {
-  background-color: #14b8a6;
-  color: white;
-}
-
-.dark .project-btn.info:hover .btn-icon {
-  color: white;
-}
-/* ===== HOVER MODO CLARO ===== */
-.light .project-btn.demo:hover {
-  background-color: #3b82f6;
-  color: white;
-}
-
-.light .project-btn.demo:hover .btn-icon {
-  color: white;
-}
-
-.light .project-btn.code:hover {
-  background-color: #1f2937;
-  color: white;
-}
-
-.light .project-btn.code:hover .btn-icon {
-  color: white;
-}
-
-.light .project-btn.info:hover {
-  background-color: #10b981;
-  color: white;
-}
-
-.light .project-btn.info:hover .btn-icon {
-  color: white;
-}
-/* ============================
-   MODO CLARO
-   ============================ */
-.light .projects {
-  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-  color: #1f2937;
-}
-
-.light .filter-btn {
-  background-color: rgba(0, 0, 0, 0.05);
-  color: #1f2937;
-}
-.light .filter-btn:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-.light .filter-btn.active {
-  background-color: #3b82f6;
-  color: white;
-  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
-}
-
-.light .project-card {
-  background: white;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-.light .project-desc {
-  color: rgba(31,41,55,0.8);
-}
-
-.light .project-tech {
-  background: rgba(0,0,0,0.05);
-}
-
-.light .project-btn.demo {
-  background-color: rgba(59, 130, 246, 0.2);
-  color: #3b82f6;
-}
-.light .project-btn.code {
-  background-color: rgba(0,0,0,0.05);
-  color: #1f2937;
-}
-.light .project-btn.info {
-  background-color: rgba(16, 185, 129, 0.2);
-  color: #10b981;
-}
-
-/* ============================
+/* =====================================================
    RESPONSIVE
-   ============================ */
+   ===================================================== */
 @media (max-width: 768px) {
   .projects {
     padding: 3rem 1.5rem;
   }
-
-  .project-image {
-    height: 160px;
+  .glass-card-image-container {
+    height: 180px;
   }
-
   .projects-title {
     font-size: 2rem;
   }
