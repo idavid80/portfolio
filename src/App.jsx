@@ -11,6 +11,7 @@ import Contact from './pages/Contact';
 import './App.css';
 import BlogMain from "./components/blog/BlogMain";
 import Experience from "./pages/Experience";
+import { SeoManager } from "./contexts/SeoManager";
 
 // Componente que contiene todas las secciones principales desplazables
 function OnePageSections() {
@@ -34,6 +35,7 @@ export default function App() {
     <div className="app-container">
       {/* El Navbar se mantiene fuera de las rutas para que siempre esté visible. */}
       <Navbar />
+      <SeoManager />
 
       {/* El elemento 'main' contiene el contenido que cambia con las rutas. */}
       <main className="main-content">

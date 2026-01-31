@@ -1,4 +1,19 @@
 {
+
+  "seo": {
+    "home_title": "iDavid80",
+    "home_desc": "Bienvenido a mi portfolio profesional especializado en IA.",
+    "blog_title": "Blog - iDavid80",
+    "blog_desc": "Lee artículos y tutoriales sobre desarrollo de software, IA y Big Data.",
+    "projects_title": "Proyectos - iDavid80",
+    "projects_desc": "Explora mis proyectos en desarrollo web, IA y Big Data.",
+    "about_title": "Sobre mí - iDavid80",
+    "about_desc": "Conoce más sobre mi trayectoria, habilidades y experiencia en desarrollo de software.",
+    "contact_title": "Contáctame - iDavid80",
+    "contact_desc": "Ponte en contacto conmigo para colaboraciones o consultas.",
+    "experience_title": "Experiencia - iDavid80",
+    "experience_desc": "Descubre mi experiencia profesional y proyectos en desarrollo de software."
+  },
   "nav": {
     "home": "Inicio",
     "about": "Sobre mí",

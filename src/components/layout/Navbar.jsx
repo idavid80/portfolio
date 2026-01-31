@@ -74,24 +74,37 @@ export default function Navbar() {
 
     if (isOpen) setIsOpen(false);
   };
-  
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPos = window.scrollY + window.innerHeight / 2;
-      let current = 'home';
-      navLinks.forEach((link) => {
-        const section = document.getElementById(link.id);
-        if (section && section.offsetTop <= scrollPos) {
-          current = link.id;
-        }
-      });
-      setActiveSection(current);
-    };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [navLinks]);
-  
+useEffect(() => {
+  const handleScroll = () => {
+    // Si estamos en el blog, no queremos activar la lógica de secciones de la home
+    if (location.pathname !== '/') return;
+
+    const scrollPos = window.scrollY + window.innerHeight / 3; // Ajustado para detectar antes
+    let current = 'home';
+
+    navLinks.forEach((link) => {
+      const section = document.getElementById(link.id);
+      if (section && section.offsetTop <= scrollPos) {
+        current = link.id;
+      }
+    });
+
+    if (current !== activeSection) {
+      setActiveSection(current);
+      // ESTA LÍNEA ES LA MAGIA: Actualiza el hash en la URL sin recargar ni saltar
+      const newHash = current === 'home' ? '' : `#${current}`;
+      window.history.replaceState(null, null, window.location.pathname + newHash);
+      
+      // Forzamos un evento de hashchange para que SeoManager se entere
+      window.dispatchEvent(new HashChangeEvent('hashchange'));
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, [navLinks, activeSection, location.pathname]);
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
