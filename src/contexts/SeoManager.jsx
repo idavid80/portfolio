@@ -44,9 +44,22 @@ const { title, desc } = getSeoData();
 
   return (
     <>
-      <title>{title}</title>
+      <title>idavid80 | Portfolio</title>
       <meta name="description" content={desc} />
       <meta name="theme-color" content={theme === 'dark' ? '#0f172a' : '#ffffff'} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={desc} />
+      <meta property="og:url" content="https://portfolio-idavid80.vercel.app.com" />
+        <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "David Domínguez Bueno",
+      "jobTitle": "Full Stack Developer",
+      "url": "https://portfolio-idavid80.vercel.app.com",
+      "sameAs": ["https://github.com/idavid80"]
+    })}
+  </script>
     </>
   );
 }
