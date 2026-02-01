@@ -39,6 +39,10 @@ export function SeoManager() {
   if (pathname.startsWith('/blog/')) {
     return { title: `${t('seo.reading')}...`, desc: t('seo.blog_post_desc') };
   }
+  return { 
+      title: `404 | ${t('seo.not_found_title', 'idavid80')}`, 
+      desc: t('seo.not_found_desc', 'Page not found') 
+    };
 }
 const { title, desc } = getSeoData();
 

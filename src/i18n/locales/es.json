@@ -12,7 +12,13 @@
     "contact_title": "Contáctame - iDavid80",
     "contact_desc": "Ponte en contacto conmigo para colaboraciones o consultas.",
     "experience_title": "Experiencia - iDavid80",
-    "experience_desc": "Descubre mi experiencia profesional y proyectos en desarrollo de software."
+    "experience_desc": "Descubre mi experiencia profesional y proyectos en desarrollo de software.",
+    "not_found_title": "Ups, espero no haber hecho algo mal.",
+    ".not_found_desc": "Mientras lo arreglo, puedes seguir viendo mi proyecto.",
+    "Page not found": "O si tienes curiosidad por saber que ha ocurrido, estas ante un error 404"
+  },
+    "spinner":{
+    "text": "Cargando Sistema"
   },
   "nav": {
     "home": "Inicio",
@@ -133,5 +139,11 @@
         "more": "Implementación de pruebas de concepto, prototipos y herramientas software relacionadas con los siguientes paquetes de trabajo del proyecto PERSEO: WP1: Desarrollo de bots,  WP3: Gestión de procesos y productividad aplicada a SE, WP4: Soporte operativo automatizado de KIP y WP5: Mejora continua del rendimiento de procesos y personas"
       }
     }
+  },
+  "not_found": {
+        "title": "Ups, espero no haber hecho algo mal.",
+    "desc": "Mientras lo arreglo, puedes seguir viendo mi proyecto.",
+    "comment": "O si tienes curiosidad por saber que ha ocurrido, estas ante un error 404",
+    "button": "Continuar"
   }
 }

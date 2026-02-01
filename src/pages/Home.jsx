@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 /* eslint-enable no-unused-vars */
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { downloadFile } from '../utils/download';
 import { FaGithub, FaDownload } from "react-icons/fa";
 import "./styles/Home.css";
 import TypingText from "../components/ui/TypingText";
@@ -14,16 +14,10 @@ export default function Home({ id }) {
   const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleDownload = () => {
-    // Lógica para descargar el CV
-    const link = document.createElement('a');
-    link.href = '/cv_Dominguez_Bueno_David_sin_datos_personales.pdf';
-    link.download = 'cv_Dominguez_Bueno_David_sin_datos_personales.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    setIsModalOpen(false); // Cierra el modal después de la descarga
-  };
+const handleDownload = () => {
+  downloadFile('/cv_Dominguez_Bueno_David_sin_datos_personales.pdf', 'CV_David_Dominguez.pdf');
+  setIsModalOpen(false);
+};
   const handleGoToContact = () => {
     setIsModalOpen(false); // Primero, cierra el modal
     const contactSection = document.getElementById('contact'); // Obtiene la sección por su ID

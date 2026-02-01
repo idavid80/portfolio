@@ -1,5 +1,7 @@
 import React from "react";
+/* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
+/* eslint-enable no-unused-vars */
 import { useTranslation } from "react-i18next";
 import { posts } from "../data/posts";
 // Importamos el componente refactorizado
@@ -18,7 +20,6 @@ export default function Blog({ id }) {
   return (
     <section id={id} className="blog">
       <div className="blog-container">
-        
         {/* Título animado con utils */}
         <motion.h2
           variants={titleVariants}

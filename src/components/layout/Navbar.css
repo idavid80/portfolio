@@ -38,9 +38,6 @@
   cursor: pointer;
   transition: transform 0.2s ease;
 }
-.dark .navbar-logo {
-
-}
 
 .navbar-logo img:hover {
   transform: scale(1.05);
@@ -76,7 +73,12 @@
 .dark .nav-item {
   color: hsl(210, 10%, 70%);
 }
-
+.nav-item,
+.mobile-nav-item,
+button {
+  min-height: 44px;
+  min-width: 44px;
+}
 .nav-item:hover {
   background-color: rgba(0, 0, 0, 0.05);
   color: hsl(210, 70%, 40%);

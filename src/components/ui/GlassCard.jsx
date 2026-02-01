@@ -1,5 +1,7 @@
 import React from "react";
+/* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
+/* eslint-enable no-unused-vars */
 import { itemVariants } from "../../utils/motion";
 import "./styles/GlassCard.css"; // CSS compartido
 
@@ -9,6 +11,7 @@ export default function GlassCard({
   imageAlt,       // Alt text
   imageOverlay,   // Para cosas como el Badge de fecha del Blog (opcional)
   className = "", // Para añadir clases extra si hace falta
+  contentVariant = "default",
   onClick,         // Por si quieres que toda la tarjeta sea clicable
   ...props
 }) {
@@ -39,7 +42,7 @@ export default function GlassCard({
       )}
 
       {/* Zona de Contenido (Aquí va lo específico de cada sección) */}
-      <div className="glass-card-content">
+      <div className={`glass-card-content glass-card-${contentVariant}`}>
         {children}
       </div>
     </motion.div>

@@ -1,5 +1,7 @@
 import React from "react";
+/* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
+/* eslint-enable no-unused-vars */
 import { useTranslation } from "react-i18next";
 import "./styles/About.css";
 import {

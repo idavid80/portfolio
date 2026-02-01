@@ -2,6 +2,7 @@ import { FaGithub } from "react-icons/fa";
 import { FiEye, FiInfo } from "react-icons/fi";
 import GlassCard from "../ui/GlassCard";
 
+
 const ProjectCard = ({ project, t, onInfoClick, ...props}) => {
   return (
     <GlassCard

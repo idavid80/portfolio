@@ -89,7 +89,6 @@ export default function ContactForm() {
           </button>
         </div>
       </form>
-      
       <FormStatus status={status} onClose={() => setStatus(null)} />
     </GlassCard>
   );

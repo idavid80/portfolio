@@ -1,0 +1,27 @@
+.not_found-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  text-align: center;
+  min-height: 100vh;
+}
+
+
+.not_found-spinner {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-contain {
+  display: inline-flex; /* Permite que el padding funcione correctamente */
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; /* Quita el subrayado de enlace */
+  cursor: pointer;
+  border: none;
+  outline: none;
+  /* El resto de tus estilos de color y radio */
+}

@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
+/* eslint-disable no-unused-vars */
 import { motion, AnimatePresence } from "framer-motion";
+/* eslint-enable no-unused-vars */
 import { useTheme } from "../../contexts/ThemeContext";
 import "./styles/Modal.css";
 

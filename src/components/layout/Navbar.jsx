@@ -7,7 +7,7 @@ import ThemeToggle from '../ui/ThemeToggle';
 import logo from "../../assets/icons/logo.png";
 import dark_logo from "../../assets/icons/dark_logo.png";
 import './Navbar.css';
-import { useNavigate, useLocation } from 'react-router-dom';
+//import { useNavigate, useLocation } from 'react-router-dom';
 import { useTheme } from '../../contexts/ThemeContext';
 import { 
   IoHomeOutline, 
@@ -17,14 +17,17 @@ import {
   IoMailOutline ,
   IoBriefcaseOutline,
 } from "react-icons/io5";
+import useScrollToSection from '../../hooks/useScrollToSection';
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const navigate = useNavigate();
-  const location = useLocation();
+  
+  //const navigate = useNavigate();
+  //const location = useLocation();
   const { theme } = useTheme();
+  const scrollToSection = useScrollToSection();
   const switchLang = () => {
     i18n.changeLanguage(i18n.language === 'es' ? 'en' : 'es');
   };
@@ -52,7 +55,7 @@ export default function Navbar() {
       icon: <IoMailOutline /> },
   ], [t]);
 
-  const scrollToSection = (id) => {
+/*  const scrollToSection = (id) => {
     const performScroll = () => {
       const section = document.getElementById(id);
       if (!section) return;
@@ -73,7 +76,7 @@ export default function Navbar() {
     }
 
     if (isOpen) setIsOpen(false);
-  };
+  };*/
 
 useEffect(() => {
   const handleScroll = () => {
@@ -103,10 +106,10 @@ useEffect(() => {
 
   window.addEventListener('scroll', handleScroll);
   return () => window.removeEventListener('scroll', handleScroll);
-}, [navLinks, activeSection, location.pathname]);
+}, [activeSection, navLinks]);
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" role="navigation" aria-label="Main navigation">
       <div className="navbar-container">
         <div className="navbar-logo">
             <img
@@ -121,6 +124,8 @@ useEffect(() => {
             <button
               key={link.id}
               onClick={() => scrollToSection(link.id)}
+              role="menuitem"
+              aria-current={activeSection === link.id ? 'page' : undefined}
               className={`nav-item ${activeSection === link.id ? 'active' : ''}`}
             >
               <span className="nav-icon">{link.icon}</span>

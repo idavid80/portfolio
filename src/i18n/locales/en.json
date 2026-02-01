@@ -11,7 +11,13 @@
     "contact_title": "Contact Me - iDavid80",
     "contact_desc": "Get in touch with me for collaborations or inquiries.",
     "experience_title": "Experience - iDavid80",
-    "experience_desc": "Discover my professional experience and projects in software development."
+    "experience_desc": "Discover my professional experience and projects in software development.",
+     "not_found_title": "Oops, I hope I haven't done anything wrong.",
+    ".not_found_desc": "While I fix it, you can continue viewing my project.",
+    "Page not found": "Or if you're curious to know what happened, you're looking at a 404 error."
+  },
+  "spinner":{
+    "text": "System Loading"
   },
   "nav": {
     "home": "Home",
@@ -134,5 +140,11 @@
         "more": "Implementation of proof-of-concept tests, prototypes and software tools related to the following work packages of the PERSEO project: WP1: Bot development platform, WP3: Process management and productivity applied to SE, WP4: Automated operation support of KIPs and WP5: Continuous improvement of process and people performance"
       }
     }
+  },
+  "not_found": {
+    "title": "Oops, I hope I haven't done anything wrong.",
+    "desc": "While I fix it, you can continue viewing my project.",
+    "comment": "Or if you're curious to know what happened, you're looking at a 404 error.",
+    "button": "Continue"
   }
 }
