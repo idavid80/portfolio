@@ -54,7 +54,7 @@ export default function App() {
   return (
     // Contenedor principal de la aplicación.
     <div className="app-container">
-      {isLoading && <LoadingScreen />}
+      
       {/* El Navbar se mantiene fuera de las rutas para que siempre esté visible. */}
       <Navbar />
       <SeoManager />
@@ -69,7 +69,7 @@ export default function App() {
 
           <Route path="/blog" element={ <BlogMain/> } />
           {/* Ruta para las publicaciones individuales del blog (sigue siendo una página separada) */}
-          <Route path="/blog/:id" element={<BlogPost />} />
+          <Route path="/blog/:id" element={isLoading? <LoadingScreen />:<BlogPost />} />
 
           {/* Ruta para manejar páginas no encontradas (404) */}
           <Route path="*" element={<NotFound />} />

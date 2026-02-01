@@ -43,10 +43,11 @@ export default function BlogPost() {
   }
   return (
     <div className="blogpage-container">
-      <Link to="/blog" className="back-to-blog">
+
+        <article className="blogpost-article">
+                <Link to="/blog" className="back-to-blog">
         ← {i18n.language.startsWith("es") ? "Volver al Blog" : "Back to Blog"}
       </Link>
-        <article className="blogpost-article">
           <img src={post.image} alt={post.title[i18n.language]} />
           <p className="blogpost-date">{post.date}</p>
           <div className="blogpost-content">
@@ -55,7 +56,7 @@ export default function BlogPost() {
             </ReactMarkdown>
           </div>
         </article>
-        <BlogSidebar />
+        <BlogSidebar/>
 
     </div>
   );

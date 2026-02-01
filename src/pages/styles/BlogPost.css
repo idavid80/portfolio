@@ -1,8 +1,12 @@
+
 /* Toggle button móvil */
 .toggle-sidebar {
   display: none;
 }
 
+.blogpost-article {
+  padding: 1rem;
+}
 /* Botón volver al blog */
 .back-to-blog {
   display: inline-block;
@@ -10,8 +14,16 @@
   color: #1d4ed8;
   text-decoration: underline;
 }
-
+.blog-sidebar {
+  position: sticky;
+  top: 4rem; /* ajusta según tu header */
+  height: fit-content;
+}
 @media (max-width: 768px) {
+    .blog-sidebar {
+    margin-top: 4rem; /* ajusta según tu header */
+    position: static;
+  }
   /* Botón volver al blog móvil */
   .back-to-blog {
     position: fixed;

@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
-// Importamos nuestra "Cáscara Premium"
 import GlassCard from "../ui/GlassCard";
 
 const BlogCard = ({ post, lang, t }) => {
